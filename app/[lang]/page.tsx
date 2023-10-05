@@ -48,19 +48,25 @@ export default async function Home({
           </div>
         </div>
         <div className="md:h-[900px] sm:h-[700px] h-[500px]">
-          <img
+          <Image
             src="/hero.png"
-            alt=""
+            alt="mainimage"
             className="h-full w-full object-contain"
+            width={500}
+            height={500}
+            objectFit='contain'
           />
         </div>
       </div>
       {/* banner image */}
       <div className="h-64 md:h-[500px] relative">
-        <img
+        <Image
           className="w-full h-full object-cover absolute z-7"
           src="/cusco-2.jpg"
-        ></img>
+          alt="cusco"
+          layout='fill'
+          objectFit='cover'
+        ></Image>
         <div className="bg-gradient-to-b from-transparent to-zinc-900 absolute z-8 w-full h-36 bottom-0"></div>
       </div>
       {/* Cards Items */}

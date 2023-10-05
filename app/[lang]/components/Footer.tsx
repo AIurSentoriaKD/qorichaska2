@@ -8,8 +8,8 @@ async function Footer({ lang }: { lang: Locale }) {
   return (
     <footer className="relative w-full">
       <div className="w-full h-full bg-black  z-9 absolute"></div>
-      {/* <img src="/wave2.svg" className="bottom-0 absolute"></img>
-      <img src="/wave.svg" className="bottom-0 absolute"></img> */}
+      {/* <Image src="/wave2.svg" className="bottom-0 absolute"></Image>
+      <Image src="/wave.svg" className="bottom-0 absolute"></Image> */}
       <div className="z-10 flex flex-col border-t border-gray-100 text-white backdrop-blur-xl bg-black/30">
         <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-60 px-6 py-10">
           <div className="flex flex-col justify-start items-start gap-6">
