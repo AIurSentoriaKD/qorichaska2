@@ -5,8 +5,6 @@ function InquiryForm() {
   async function sendDataReservation(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    console.log(formData);
   }
   return (
     <form onSubmit={sendDataReservation} className="flex gap-4">
