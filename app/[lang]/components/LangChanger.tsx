@@ -3,7 +3,7 @@
 import { redirect, usePathname } from "next/navigation";
 import { i18n } from "@/i18n.config";
 import { Fragment, useState } from "react";
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { Listbox, Transition } from "@headlessui/react";
 import { Locale } from "@/i18n.config";
 import { LangChangerProps } from "@/types";
@@ -21,14 +21,17 @@ function LangChanger({ initialLang }: LangChangerProps) {
   };
   const [selectedLang, setSelectedLang] = useState(initialLang);
 
-  {i18n.locales.map((lang) => (
-    <Link
-      href={redirectedPathName(lang)}
-      className="rounded-md border bg-black px-3 py-2 text-white"
-    >
-      {lang}
-    </Link>
-  ))}
+  {
+    i18n.locales.map((lang) => (
+      <Link
+        href={redirectedPathName(lang)}
+        className="rounded-md border bg-black px-3 py-2 text-white"
+        key={lang}
+      >
+        {lang}
+      </Link>
+    ));
+  }
 
   return (
     <div className="w-20 text-black">
@@ -55,7 +58,7 @@ function LangChanger({ initialLang }: LangChangerProps) {
                   key={lang}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                      active ? "bg-amber-100 text-amber-900" : "text-gray-900"
                     }`
                   }
                   value={lang}
@@ -63,15 +66,18 @@ function LangChanger({ initialLang }: LangChangerProps) {
                   {({ selected }) => (
                     <>
                       <Link
-                      href={redirectedPathName(lang)}
+                        href={redirectedPathName(lang)}
                         className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
+                          selected ? "font-medium" : "font-normal"
                         }`}
                       >
                         {lang}
                       </Link>
                       {selected ? (
-                        <Link href={redirectedPathName(lang)} className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                        <Link
+                          href={redirectedPathName(lang)}
+                          className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                        >
                           <CheckIcon className="h-5 w-5" aria-hidden="true" />
                         </Link>
                       ) : null}
