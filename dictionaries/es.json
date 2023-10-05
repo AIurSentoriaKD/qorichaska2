@@ -1,0 +1,55 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "location": "Ubicación",
+    "contact": "Contáctanos"
+  },
+  "page": {
+    "home": {
+      "title": "ola",
+      "slogan": "Un Pedacito de Cielo en los Andes",
+      "description": "Un Hotel con diferencia: Cálida y amistosa atención que nos caracteriza",
+      "infocards": [
+        {
+          "title": "Desayunos Serenos",
+          "subtitle": "Mañanas Perfectas en Nuestros Patios",
+          "content": "Comienza tus días con un desayuno tranquilo en nuestros encantadores patios. Disfruta de la compañía de amigos y familiares mientras saboreas una variedad de delicias. Una forma única de comenzar tu aventura en Cusco."
+        },
+        {
+          "title": "Explora y Descubre",
+          "subtitle": "Tu Puerta de Acceso a Machu Picchu",
+          "content": "Hospedarte con nosotros no solo te brinda comodidad, sino también acceso a las maravillas de Machu Picchu y otros tesoros de la región. Descubre la riqueza cultural de Cusco con nosotros."
+        },
+        {
+          "title": "Compromiso Social",
+          "subtitle": "Nuestra Contribución a Cusco",
+          "content": "En el Hotel Qorichaska, estamos comprometidos con la comunidad de Cusco. Descubre cómo nuestras acciones benefician a la ciudad y a sus habitantes, mientras disfrutas de tu estancia con una causa."
+        },
+        {
+          "title": "Experiencia Familiar",
+          "subtitle": "Momentos Inolvidables con Amigos y Familiares",
+          "content": "En nuestro hotel, creamos momentos especiales para que disfrutes junto a tus seres queridos. Desde desayunos tranquilos hasta aventuras emocionantes, tu experiencia será memorable."
+        }
+      ]
+    },
+    "about": {
+      "title": "acerca de ",
+      "description": "acerca de pagina"
+    },
+    "services": {
+      "title": "servicios",
+      "description": "pagina servicios"
+    },
+    "gallery": {
+      "title": "galeria",
+      "description": "pagina galeria"
+    },
+    "location": {
+      "title": "ubicacion",
+      "description": "pagina ubicacion"
+    }
+  }
+}

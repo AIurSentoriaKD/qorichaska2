@@ -1,0 +1,55 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Gallery",
+    "location": "Location",
+    "contact": "Contact Us"
+  },
+  "page": {
+    "home": {
+      "title": "Welcome to NextJs i18n",
+      "slogan": "A Little Piece of Paradise in the Andes",
+      "description": "A Hostel with a Difference: Our Warm and Friendly Approach Defines Us",
+      "infocards": [
+        {
+          "title": "Calm breakfasts",
+          "subtitle": "Perfect Mornings on Our Patios",
+          "content": "Start your days with a leisurely breakfast on our lovely patios. Enjoy the company of friends and family while savoring a variety of delicacies. A unique way to start your adventure in Cusco."
+        },
+        {
+          "title": "Explore and Discover",
+          "subtitle": "Your Gateway to Machu Picchu",
+          "content": "Staying with us not only gives you comfort, but also access to the wonders of Machu Picchu and other treasures of the region. Discover the cultural richness of Cusco with us."
+        },
+        {
+          "title": "Social Commitment",
+          "subtitle": "Our Contribution to Cusco",
+          "content": "At Hotel Qorichaska, we are committed to the community of Cusco. Find out how our actions benefit the city and its inhabitants, while you enjoy your stay with a cause."
+        },
+        {
+          "title": "Family Experience",
+          "subtitle": "Unforgettable Moments with Friends and Family",
+          "content": "At our hotel, we create special moments for you to enjoy with your loved ones. From leisurely breakfasts to exciting adventures, your experience will be memorable."
+        }
+      ]
+    },
+    "about": {
+      "title": "About Us",
+      "description": "This is the about page"
+    },
+    "services": {
+      "title": "services",
+      "description": "page services"
+    },
+    "gallery": {
+      "title": "gallery",
+      "description": "page gallery"
+    },
+    "location": {
+      "title": "location",
+      "description": "page location"
+    }
+  }
+}
