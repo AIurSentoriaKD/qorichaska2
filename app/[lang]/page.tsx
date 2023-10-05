@@ -8,6 +8,7 @@ import GalleryHome from "./components/GalleryHome";
 
 import Reveal from "./components/animation/Reveal";
 import Hover from "./components/animation/Hover";
+import InquiryForm from "./components/InquiryForm";
 
 export default async function Home({
   params: { lang },
@@ -39,12 +40,12 @@ export default async function Home({
             <p className="hero__subtitle">{page.home.description}</p>
           </Reveal>
           <div className="my-5">
-          <Hover>
-            <CustomButton
-              title="Reservar ahora"
-              containerStyles="bg-primary-blue text-white rounded-full"
-            ></CustomButton>
-          </Hover>
+            <Hover>
+              <CustomButton
+                title="Reservar ahora"
+                containerStyles="bg-primary-blue text-white rounded-full"
+              ></CustomButton>
+            </Hover>
           </div>
         </div>
         <div className="md:h-[900px] sm:h-[700px] h-[500px]">
@@ -54,19 +55,24 @@ export default async function Home({
             className="h-full w-full object-contain"
             width={500}
             height={500}
-            objectFit='contain'
+            objectFit="contain"
           />
         </div>
       </div>
       {/* banner image */}
-      <div className="h-64 md:h-[500px] relative">
+      <div className="h-64 md:h-[500px] relative w-full">
         <Image
           className="w-full h-full object-cover absolute z-7"
           src="/cusco-2.jpg"
           alt="cusco"
-          layout='fill'
-          objectFit='cover'
-        ></Image>
+          layout="fill"
+          objectFit="cover"
+        />
+        <div className="w-full h-full text-black absolute z-8 flex items-center justify-center">
+          <div className="bg-black/80 w-1/2 flex items-center justify-center rounded-lg border-white border-2 p-4">
+            <InquiryForm />
+          </div>
+        </div>
         <div className="bg-gradient-to-b from-transparent to-zinc-900 absolute z-8 w-full h-36 bottom-0"></div>
       </div>
       {/* Cards Items */}
