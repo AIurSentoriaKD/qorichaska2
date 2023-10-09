@@ -21,20 +21,20 @@ function LangChanger({ initialLang }: LangChangerProps) {
   };
   const [selectedLang, setSelectedLang] = useState(initialLang);
 
-  {
-    i18n.locales.map((lang) => (
-      <Link
-        href={redirectedPathName(lang)}
-        className="rounded-md border bg-black px-3 py-2 text-white"
-        key={lang}
-      >
-        {lang}
-      </Link>
-    ));
-  }
+  // {
+  //   i18n.locales.map((lang) => (
+  //     <Link
+  //       href={redirectedPathName(lang)}
+  //       className="rounded-md border bg-black px-3 py-2 text-white"
+  //       key={lang}
+  //     >
+  //       {lang}
+  //     </Link>
+  //   ));
+  // }
 
   return (
-    <div className="w-20 text-black">
+    <div className="w-40 sm:w-20 text-black">
       <Listbox value={selectedLang} onChange={setSelectedLang}>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
