@@ -74,40 +74,44 @@ export default async function Home({
 
       {/* Cards Items */}
       <div className="flex-wrap sm:flex mx-auto sm:mx-auto md:mx-0 justify-center gap-4 relative h-[1950px] sm:h-[990px] md:h-[990px] lg:h-[500px] xl:[550px] w-full -top-10">
-        <ImageCard
-          image="card1.jpg"
-          title={page.home.infocards[0].title}
-          subtitle={page.home.infocards[0].subtitle}
-          content={page.home.infocards[0].content}
-          action="Acc"
-        />
-        <ImageCard
-          image="card2.jpg"
-          title={page.home.infocards[1].title}
-          subtitle={page.home.infocards[1].subtitle}
-          content={page.home.infocards[1].content}
-          action="Acc"
-        />
-
-        <ImageCard
-          image="card1.jpg"
-          title={page.home.infocards[2].title}
-          subtitle={page.home.infocards[2].subtitle}
-          content={page.home.infocards[2].content}
-          action="Acc"
-        />
-
-        <ImageCard
-          image="card1.jpg"
-          title={page.home.infocards[3].title}
-          subtitle={page.home.infocards[3].subtitle}
-          content={page.home.infocards[3].content}
-          action="Acc"
-        />
+        <Reveal delay={0.3}>
+          <ImageCard
+            image="card1.jpg"
+            title={page.home.infocards[0].title}
+            subtitle={page.home.infocards[0].subtitle}
+            content={page.home.infocards[0].content}
+            action="Acc"
+          />
+        </Reveal>
+        <Reveal delay={0.35}>
+          <ImageCard
+            image="card2.jpg"
+            title={page.home.infocards[1].title}
+            subtitle={page.home.infocards[1].subtitle}
+            content={page.home.infocards[1].content}
+            action="Acc"
+          />
+        </Reveal>
+        <Reveal delay={0.4}>
+          <ImageCard
+            image="card1.jpg"
+            title={page.home.infocards[2].title}
+            subtitle={page.home.infocards[2].subtitle}
+            content={page.home.infocards[2].content}
+            action="Acc"
+          />
+        </Reveal>
+        <Reveal delay={0.45}>
+          <ImageCard
+            image="card1.jpg"
+            title={page.home.infocards[3].title}
+            subtitle={page.home.infocards[3].subtitle}
+            content={page.home.infocards[3].content}
+            action="Acc"
+          />
+        </Reveal>
       </div>
-      <div className="flex justify-center bg-gray-500 h-[100px] mx-4 rounded-lg">
-
-      </div>
+      <div className="flex justify-center bg-gray-500 h-[100px] mx-4 rounded-lg"></div>
       {/* Contacts Items */}
       <div className="py-10 md:flex justify-center align-middle gap-10 padding-x mt-10 bg-gray-500">
         <ContactItem

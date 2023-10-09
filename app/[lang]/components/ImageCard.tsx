@@ -20,8 +20,8 @@ function ImageCard({
       {/* <div className="z-3 absolute border-8 border-white rounded-lg w-full h-full bg-white"></div> */}
       <Image className="rounded-xl w-auto h-[600px] object-cover" src={`/${image}`} alt="imagecardimage" width={400} height={600}></Image>
       <div className="w-full h-full top-0  absolute  backdrop-blur-md rounded-xl bg-black/30 text-white p-12 flex flex-col justify-center -right-full group-hover:right-0 transition-all duration-200">
-        <h1 className="text-2xl font-extrabold uppercase">{title}</h1>
-        <p className="font-extralight capitalize">{subtitle}</p>
+        <h1 className="text-xl font-extrabold uppercase">{title}</h1>
+        <p className="font-extralight capitalize text-sm">{subtitle}</p>
         <p className="text-lg my-5 text-justify">{content}</p>
         <CustomButton
           title={action}
