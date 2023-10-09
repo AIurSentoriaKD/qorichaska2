@@ -6,14 +6,16 @@ function ContactItem({
   subtext,
   cta,
   icon,
+  direction
 }: {
   tipo: string;
   subtext: string;
   cta: string;
   icon: string;
+  direction: string;
 }) {
   return (
-    <div className="md:w-1/4 w-[500px] my-10 relative bg-white rounded-lg drop-shadow-lg border-l-4 border-blue-500 border-b-4">
+    <div className="md:w-1/3 lg:w-[450px]  my-10 relative bg-white rounded-lg drop-shadow-lg border-l-4 border-blue-500 border-b-4">
       <div className="absolute w-full flex justify-center -top-9 right-0">
         <Image
           src={`/${icon}`}
@@ -26,7 +28,7 @@ function ContactItem({
       <div className="p-8 flex flex-col gap-4">
         <h1 className="text-lg font-extrabold">{tipo}</h1>
         <p className="font-extralight">{subtext}</p>
-        <a href="" className="flex flex-row gap-4 justify-end">
+        <a href={direction} className="flex flex-row gap-4 justify-end">
           <p>{cta}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
