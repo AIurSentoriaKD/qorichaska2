@@ -12,6 +12,9 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
+        "qori-primary": "#03a5a5",
+        "qori-secondary": "#a5a5fd",
+        "qori-accent": "#04d2d2",
         "black-100": "#2B2C35",
         "primary-blue": {
           DEFAULT: "#2B59FF",

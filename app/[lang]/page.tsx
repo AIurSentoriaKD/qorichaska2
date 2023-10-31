@@ -8,6 +8,7 @@ import GalleryHome from "./components/GalleryHome";
 
 import Reveal from "./components/animation/Reveal";
 import Hover from "./components/animation/Hover";
+import CtaReservation from "./components/CtaReservation";
 
 export default async function Home({
   params: { lang },
@@ -52,28 +53,32 @@ export default async function Home({
             </Reveal>
             <div className="my-5">
               <Hover>
-                <CustomButton
-                  title="Reservar ahora"
-                  containerStyles="bg-primary-blue text-white rounded-full"
-                ></CustomButton>
+                <Reveal>
+                  <CustomButton
+                    title="Reservar ahora"
+                    containerStyles="bg-qori-primary text-white rounded-full hover:bg-qori-accent"
+                  ></CustomButton>
+                </Reveal>
               </Hover>
             </div>
           </div>
           <div className="h-full  items-center align-middle absolute right-0 hidden lg:block lg:scale-75">
-            <Image
-              src="/hero.png"
-              alt="mainimage"
-              className=""
-              width={640}
-              height={640}
-              style={{ objectFit: "cover" }}
-            />
+            <Reveal>
+              <Image
+                src="/hero.png"
+                alt="mainimage"
+                className=""
+                width={640}
+                height={640}
+                style={{ objectFit: "cover" }}
+              />
+            </Reveal>
           </div>
         </div>
       </div>
 
       {/* Cards Items */}
-      <div className="flex-wrap sm:flex mx-auto sm:mx-auto md:mx-0 justify-center gap-4 relative h-[1950px] sm:h-[990px] md:h-[990px] lg:h-[500px] xl:[550px] w-full -top-10">
+      <div className="flex-wrap sm:flex mx-auto sm:mx-auto md:mx-0 justify-center gap-4 relative  w-full my-10">
         <Reveal delay={0.3}>
           <ImageCard
             image="card1.jpg"
@@ -111,9 +116,9 @@ export default async function Home({
           />
         </Reveal>
       </div>
-      <div className="flex justify-center bg-gray-500 h-[100px] mx-4 rounded-lg"></div>
+      <CtaReservation />
       {/* Contacts Items */}
-      <div className="py-10 md:flex justify-center align-middle gap-10 padding-x mt-10 bg-gray-500">
+      <div className="py-10 md:flex justify-center align-middle gap-10 padding-x mt-10 bg-qori-primary">
         <ContactItem
           tipo="Whatsapp"
           subtext="Contáctanos por Whatsapp"
