@@ -41,6 +41,7 @@
     },
     "services": {
       "title": "services",
+      "slogan": "services",
       "description": "page services"
     },
     "gallery": {
