@@ -53,7 +53,7 @@ export default async function Services({
               <Hover>
                 <Reveal>
                   <CustomButton
-                    title="Reservar ahora"
+                    title={page.services["button-text"]}
                     containerStyles="bg-qori-primary text-white rounded-full hover:bg-qori-accent"
                   ></CustomButton>
                 </Reveal>
@@ -78,7 +78,7 @@ export default async function Services({
       <div className="bg-qori-primary text-white ">
         <div className="py-10">
           <h1 className="text-3xl font-semibold text-center w-full underline underline-offset-8">
-            Included Services
+            {page.services["inc-text"]}
           </h1>
         </div>
         <div className="w-full flex justify-center">
@@ -88,10 +88,11 @@ export default async function Services({
                 <AiOutlineWifi size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">WI-FI</h1>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.included[0].service}
+                </h1>
                 <p className="text-gray-100">
-                  We have good internet by WIFI in all rooms and environments of
-                  our hostel, connect to social networks and enjoy.
+                  {page.services.included[0].description}
                 </p>
               </div>
             </div>
@@ -100,10 +101,11 @@ export default async function Services({
                 <AiFillLock size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">24h security</h1>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.included[1].service}
+                </h1>
                 <p className="text-gray-100">
-                  you can leave your bags safely in your room; Honesty is our
-                  most fundamental value.
+                  {page.services.included[1].description}
                 </p>
               </div>
             </div>
@@ -113,11 +115,10 @@ export default async function Services({
               </i>
               <div className="">
                 <h1 className="text-lg font-extrabold mb-5">
-                  Comfortable beds
+                  {page.services.included[2].service}
                 </h1>
                 <p className="text-gray-100">
-                  Our hostel cares for you to sleep well, and comfortable; we
-                  have hypoallergenic and orthopedic beds; always clean and tidy
+                  {page.services.included[2].description}
                 </p>
               </div>
             </div>
@@ -127,11 +128,10 @@ export default async function Services({
               </i>
               <div className="">
                 <h1 className="text-lg font-extrabold mb-5">
-                  Multilingual Staff
+                  {page.services.included[3].service}
                 </h1>
                 <p className="text-gray-100">
-                  Travelers from all over the world are welcome, we speak your
-                  language
+                  {page.services.included[3].description}
                 </p>
               </div>
             </div>
@@ -140,10 +140,11 @@ export default async function Services({
                 <PiTelevisionSimpleBold size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">TV Cable</h1>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.included[4].service}
+                </h1>
                 <p className="text-gray-100">
-                  We have Cable TV with flat screen in all our rooms, with
-                  national and international channels
+                  {page.services.included[4].description}
                 </p>
               </div>
             </div>
@@ -152,10 +153,11 @@ export default async function Services({
                 <RiLuggageDepositLine size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">Luggage storage</h1>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.included[5].service}
+                </h1>
                 <p className="text-gray-100">
-                  If you go on a trip and plan to return, you can leave your
-                  bags safely
+                  {page.services.included[5].description}
                 </p>
               </div>
             </div>
@@ -164,8 +166,12 @@ export default async function Services({
                 <BsDroplet size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">Hot showers</h1>
-                <p className="text-gray-100">Enjoy hot water 24 hours a day</p>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.included[6].service}
+                </h1>
+                <p className="text-gray-100">
+                  {page.services.included[6].description}
+                </p>
               </div>
             </div>
             <div className="flex flex-row">
@@ -174,11 +180,10 @@ export default async function Services({
               </i>
               <div className="">
                 <h1 className="text-lg font-extrabold mb-5">
-                  24hrs receptions
+                  {page.services.included[7].service}
                 </h1>
                 <p className="text-gray-100">
-                  We know that you can arrive from your trip at any time of the
-                  day, we will wait for you
+                  {page.services.included[7].description}
                 </p>
               </div>
             </div>
@@ -191,7 +196,7 @@ export default async function Services({
       <div className="bg-teal-700 text-white ">
         <div className="py-10">
           <h1 className="text-3xl font-semibold text-center w-full underline underline-offset-8">
-            Optional Services
+            {page.services["option-text"]}
           </h1>
         </div>
         <div className="w-full flex justify-center">
@@ -201,11 +206,11 @@ export default async function Services({
                 <MdCardTravel size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">Travel services</h1>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.optional[0].service}
+                </h1>
                 <p className="text-gray-100">
-                  In our hostel you may require as many as tourist information
-                  as well as be able to buy tourist packages to the main
-                  destinations in Cusco
+                  {page.services.optional[0].description}
                 </p>
               </div>
             </div>
@@ -214,10 +219,11 @@ export default async function Services({
                 <RiTempColdLine size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">Heating Service</h1>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.optional[1].service}
+                </h1>
                 <p className="text-gray-100">
-                  For those days where you feel at home we have heating, which
-                  can request when making your reservation or reception
+                  {page.services.optional[1].description}
                 </p>
               </div>
             </div>
@@ -227,11 +233,10 @@ export default async function Services({
               </i>
               <div className="">
                 <h1 className="text-lg font-extrabold mb-5">
-                  Medical assistance
+                  {page.services.optional[2].service}
                 </h1>
                 <p className="text-gray-100">
-                  To require medical assistance you may request at any time,
-                  we’ll manage it when needed.
+                  {page.services.optional[2].description}
                 </p>
               </div>
             </div>
@@ -240,10 +245,11 @@ export default async function Services({
                 <MdLocalLaundryService size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">Laundry service</h1>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.optional[3].service}
+                </h1>
                 <p className="text-gray-100">
-                  We have an excellent laundry service which will provide it
-                  every day you need
+                  {page.services.optional[3].description}
                 </p>
               </div>
             </div>
@@ -252,10 +258,11 @@ export default async function Services({
                 <RiRestaurantFill size="50" />
               </i>
               <div className="">
-                <h1 className="text-lg font-extrabold mb-5">Restaurant</h1>
+                <h1 className="text-lg font-extrabold mb-5">
+                  {page.services.optional[4].service}
+                </h1>
                 <p className="text-gray-100">
-                  Restaurant (You can book in advance typical dishes of Peru and
-                  Cusco)
+                  {page.services.optional[4].description}
                 </p>
               </div>
             </div>

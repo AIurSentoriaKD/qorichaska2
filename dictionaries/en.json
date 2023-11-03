@@ -12,6 +12,7 @@
       "title": "Welcome to NextJs i18n",
       "slogan": "A Little Piece of Paradise in the Andes",
       "description": "A Hostel with a Difference: Our Warm and Friendly Approach Defines Us",
+      "button-text": "Inquiry Now",
       "infocards": [
         {
           "title": "Calm breakfasts",
@@ -41,8 +42,67 @@
     },
     "services": {
       "title": "services",
-      "slogan": "services",
-      "description": "page services"
+      "slogan": "Qorichaska Hotel, a traditional and modern Hotel",
+      "description": "Over 20 years of experience that is our guarantee",
+      "button-text": "Inquiry Now",
+      "inc-text": "Included Services",
+      "included": [
+        {
+          "service": "High speed Wi-Fi",
+          "description": "Enjoy a fast and reliable internet connection throughout your stay. Stay connected with your loved ones and share your adventures online."
+        },
+        {
+          "service": "Comfortable Beds",
+          "description": "Relax and rest in our comfortable beds. We ensure a restful night's sleep, leaving you refreshed each day."
+        },
+        {
+          "service": "TV Cable",
+          "description": "Entertainment at your fingertips. Enjoy a wide selection of channels in your room and unwind after a day of exploration."
+        },
+        {
+          "service": "Hot Shower",
+          "description": "Rejuvenate with a hot shower anytime. Our facilities guarantee comfort and relaxation."
+        },
+        {
+          "service": "Luggage Security",
+          "description": "our peace of mind is our priority. We offer luggage security, allowing you to explore worry-free."
+        },
+        {
+          "service": "Multilingual Staff",
+          "description": "Our friendly and multilingual staff is ready to assist you. Communication without barriers for a hassle-free experience."
+        },
+        {
+          "service": "Luggage Storage",
+          "description": "Travel light and worry-free. Safely store your luggage before arrival or after check-out."
+        },
+        {
+          "service": "24-Hour Reception",
+          "description": "We're available at all times to cater to your needs. Our reception is open 24/7 to provide continuous assistance."
+        }
+      ],
+      "option-text": "Optional Services",
+      "optional": [
+        {
+          "service": "Travel Service",
+          "description": "Explore worry-free. Our travel service helps you plan your adventures and excursions efficiently and safely."
+        },
+        {
+          "service": "Medical Assistance",
+          "description": "Your well-being is our priority. We offer medical assistance to ensure you are taken care of in case of any eventuality."
+        },
+        {
+          "service": "Restaurant",
+          "description": "You can book a variety of culinary options to satisfy your palate."
+        },
+        {
+          "service": "Heating",
+          "description": "Maintain comfort in all seasons. Enjoy warm and cozy rooms, perfect for unwinding after a day of exploration."
+        },
+        {
+          "service": "Laundry",
+          "description": "Travel light and fresh. Our laundry service is at your disposal to keep your clothes pristine during your stay."
+        }
+      ]
     },
     "gallery": {
       "title": "gallery",
