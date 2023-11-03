@@ -12,6 +12,7 @@
       "title": "ola",
       "slogan": "Un Pedacito de Cielo en los Andes",
       "description": "Un Hotel con diferencia: Cálida y amistosa atención que nos caracteriza",
+      "button-text": "Reservar Ahora",
       "infocards": [
         {
           "title": "Desayunos Serenos",
@@ -41,7 +42,67 @@
     },
     "services": {
       "title": "servicios",
-      "description": "pagina servicios"
+      "slogan": "El hotel Qorichaska, un hotel tradicional y moderno",
+      "description": "Nuestra experiencia de más de 20 años es nuestra garantía",
+      "button-text": "Reservar Ahora",
+      "inc-text": "Servicios Incluidos",
+      "included": [
+        {
+          "service": "Wi-Fi de Alta Velocidad",
+          "description": "Disfruta de una conexión a Internet rápida y confiable durante tu estancia. Mantente conectado con tus seres queridos y comparte tus aventuras en línea."
+        },
+        {
+          "service": "Camas Cómodas",
+          "description": "Relájate y descansa en nuestras cómodas camas. Garantizamos una noche de sueño reparador para que te sientas renovado cada día."
+        },
+        {
+          "service": "TV Cable en la Habitación",
+          "description": "Entretenimiento a tu alcance. Disfruta de una amplia selección de canales en tu habitación y relájate después de un día de exploración."
+        },
+        {
+          "service": "Ducha Caliente",
+          "description": "Recupérate con una ducha caliente en cualquier momento. Nuestras instalaciones te garantizan confort y relajación."
+        },
+        {
+          "service": "Seguridad del Equipaje",
+          "description": "Tu tranquilidad es nuestra prioridad. Ofrecemos seguridad para tu equipaje, para que puedas explorar sin preocupaciones."
+        },
+        {
+          "service": "Personal Multilingüe",
+          "description": "Nuestro personal amable y multilingüe está listo para ayudarte. Comunicación sin barreras para una experiencia sin complicaciones."
+        },
+        {
+          "service": "Almacenamiento de Equipaje",
+          "description": "Viaja ligero y sin preocupaciones. Puedes dejar tu equipaje de forma segura antes de la llegada o después de la salida."
+        },
+        {
+          "service": " Recepción 24 Horas",
+          "description": "Estamos disponibles en todo momento para atender tus necesidades. Nuestra recepción está abierta las 24 horas para brindarte asistencia constante"
+        }
+      ],
+      "option-text": "Servicios Opcionales",
+      "optional": [
+        {
+          "service": "Servicio de Viaje",
+          "description": "Explore sin preocupaciones. Nuestro servicio de viaje te ayuda a planificar tus aventuras y excursiones de manera eficiente y segura."
+        },
+        {
+          "service": "Asistencia Médica",
+          "description": "Tu bienestar es nuestra prioridad. Ofrecemos asistencia médica para garantizar que estés cuidado en caso de cualquier eventualidad."
+        },
+        {
+          "service": "Restaurante",
+          "description": "Puede pedir o reservar antifipadamente platos típicos del Cusco."
+        },
+        {
+          "service": "Calefacción",
+          "description": "Mantén la comodidad en todas las estaciones. Disfruta de habitaciones cálidas y acogedoras, perfectas para relajarte después de un día de exploración."
+        },
+        {
+          "service": "Lavandería",
+          "description": "Viaja ligero y fresco. Nuestra lavandería está a tu disposición para mantener tu ropa impecable durante tu estancia."
+        }
+      ]
     },
     "gallery": {
       "title": "galeria",

@@ -1,104 +1,57 @@
-export const manufacturers = [
-    "Acura",
-    "Alfa Romeo",
-    "Aston Martin",
-    "Audi",
-    "Bentley",
-    "BMW",
-    "Buick",
-    "Cadillac",
-    "Chevrolet",
-    "Chrysler",
-    "Citroen",
-    "Dodge",
-    "Ferrari",
-    "Fiat",
-    "Ford",
-    "GMC",
-    "Honda",
-    "Hyundai",
-    "Infiniti",
-    "Jaguar",
-    "Jeep",
-    "Kia",
-    "Lamborghini",
-    "Land Rover",
-    "Lexus",
-    "Lincoln",
-    "Maserati",
-    "Mazda",
-    "McLaren",
-    "Mercedes-Benz",
-    "MINI",
-    "Mitsubishi",
-    "Nissan",
-    "Porsche",
-    "Ram",
-    "Rolls-Royce",
-    "Subaru",
-    "Tesla",
-    "Toyota",
-    "Volkswagen",
-    "Volvo",
-  ];
-  
+export const footerLinksEN = [
+  {
+    title: "About",
+    links: [
+      { title: "About us", url: "/" },
+      { title: "Experience", url: "/" },
+      { title: "Labor", url: "/" },
+      { title: "Location", url: "/" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { title: "Rooms", url: "/" },
+      { title: "Mission", url: "/" },
+      { title: "Vision", url: "/" },
+      { title: "Payment and Procedures", url: "/" },
+    ],
+  },
+  {
+    title: "Socials",
+    links: [
+      { title: "Instagram", url: "/" },
+      { title: "WhatsApp", url: "/" },
+      { title: "Facebook", url: "/" },
+    ],
+  },
+];
 
-  export const footerLinksEN = [
-    {
-      title: "About",
-      links: [
-        { title: "How it works", url: "/" },
-        { title: "Featured", url: "/" },
-        { title: "Partnership", url: "/" },
-        { title: "Bussiness Relation", url: "/" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { title: "Events", url: "/" },
-        { title: "Blog", url: "/" },
-        { title: "Podcast", url: "/" },
-        { title: "Invite a friend", url: "/" },
-      ],
-    },
-    {
-      title: "Socials",
-      links: [
-        { title: "Discord", url: "/" },
-        { title: "Instagram", url: "/" },
-        { title: "Twitter", url: "/" },
-        { title: "Facebook", url: "/" },
-      ],
-    },
-  ];
-
-  export const footerLinksES = [
-    {
-      title: "Acerca De",
-      links: [
-        { title: "How it works", url: "/" },
-        { title: "Featured", url: "/" },
-        { title: "Partnership", url: "/" },
-        { title: "Bussiness Relation", url: "/" },
-      ],
-    },
-    {
-      title: "Hotel",
-      links: [
-        { title: "Events", url: "/" },
-        { title: "Blog", url: "/" },
-        { title: "Podcast", url: "/" },
-        { title: "Invite a friend", url: "/" },
-      ],
-    },
-    {
-      title: "Sociales",
-      links: [
-        { title: "Discord", url: "/" },
-        { title: "Instagram", url: "/" },
-        { title: "Twitter", url: "/" },
-        { title: "Facebook", url: "/" },
-      ],
-    },
-  ];
+export const footerLinksES = [
+  {
+    title: "Nosotros",
+    links: [
+      { title: "Acerca de", url: "/" },
+      { title: "Experiencia", url: "/" },
+      { title: "Labor", url: "/" },
+      { title: "Ubicación", url: "/" },
+    ],
+  },
+  {
+    title: "Compañia",
+    links: [
+      { title: "Habitaciones", url: "/" },
+      { title: "Mision", url: "/" },
+      { title: "Vision", url: "/" },
+      { title: "Procedimientos de Pago", url: "/" },
+    ],
+  },
+  {
+    title: "Sociales",
+    links: [
+      { title: "Instagram", url: "/" },
+      { title: "WhatsApp", url: "/" },
+      { title: "Facebook", url: "/" },
+    ],
+  },
+];
