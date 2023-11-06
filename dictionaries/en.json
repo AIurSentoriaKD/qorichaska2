@@ -7,6 +7,31 @@
     "location": "Location",
     "contact": "Contact Us"
   },
+  "components": {
+    "cta-reservation": {
+      "mail": "E-Mail",
+      "name": "Name",
+      "last-name": "Last Name",
+      "action": "Inquiry Now"
+    },
+    "contactItems": {
+      "wsp": {
+        "title": "WhatsApp",
+        "content": "Have a question or need immediate assistance? We're just a message away on WhatsApp! Chat with us now for quick, personalized answers.",
+        "action": "Talk to Us"
+      },
+      "phone": {
+        "title": "Phone Call",
+        "content": "Our team is ready to assist you. If you prefer a personal conversation, feel free to give us a call. We're available 24/7 to help you with any inquiries.",
+        "action": "Call Us"
+      },
+      "email": {
+        "title": "Email",
+        "content": "Need detailed information or want to share specific details? Send us an email, and we'll respond with all the information you need to plan your stay.",
+        "action": " Write to Us"
+      }
+    }
+  },
   "page": {
     "home": {
       "title": "Welcome to NextJs i18n",

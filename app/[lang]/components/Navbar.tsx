@@ -52,19 +52,39 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
           <p className="font-extrabold mx-5 text-2xl">Qorichaska Hotel</p>
         </Link>
         <div className="md:flex hidden gap-5">
-          <Link href={`/${lang}`} className={linkStyle}>
+          <Link
+            href={`/${lang}`}
+            className={linkStyle}
+            onClick={(dropDown) => setDropDown(!dropDown)}
+          >
             {navigation.home}
           </Link>
-          <Link href={`/${lang}/services`} className={linkStyle}>
+          <Link
+            href={`/${lang}/services`}
+            className={linkStyle}
+            onClick={(dropDown) => setDropDown(!dropDown)}
+          >
             {navigation.services}
           </Link>
-          <Link href={`/${lang}/gallery`} className={linkStyle}>
+          <Link
+            href={`/${lang}/gallery`}
+            className={linkStyle}
+            onClick={(dropDown) => setDropDown(!dropDown)}
+          >
             {navigation.gallery}
           </Link>
-          <Link href={`/${lang}/location`} className={linkStyle}>
+          <Link
+            href={`/${lang}/location`}
+            className={linkStyle}
+            onClick={(dropDown) => setDropDown(!dropDown)}
+          >
             {navigation.location}
           </Link>
-          <Link href={`/${lang}/contact`} className={linkStyle}>
+          <Link
+            href={`/${lang}/contact`}
+            className={linkStyle}
+            onClick={(dropDown) => setDropDown(!dropDown)}
+          >
             {navigation.contact}
           </Link>
         </div>
@@ -101,19 +121,39 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
       {dropDown ? (
         <div className="bg-black/80 h-screen w-screen absolute top-20">
           <div className="text-white flex flex-col gap-5 w-full justify-center items-center text-xl my-20">
-            <Link href={`/${lang}`} className={linkStyle}>
+            <Link
+              href={`/${lang}`}
+              className={linkStyle}
+              onClick={(dropDown) => setDropDown(!dropDown)}
+            >
               {navigation.home}
             </Link>
-            <Link href={`/${lang}/services`} className={linkStyle}>
+            <Link
+              href={`/${lang}/services`}
+              className={linkStyle}
+              onClick={(dropDown) => setDropDown(!dropDown)}
+            >
               {navigation.services}
             </Link>
-            <Link href={`/${lang}/gallery`} className={linkStyle}>
+            <Link
+              href={`/${lang}/gallery`}
+              className={linkStyle}
+              onClick={(dropDown) => setDropDown(!dropDown)}
+            >
               {navigation.gallery}
             </Link>
-            <Link href={`/${lang}/location`} className={linkStyle}>
+            <Link
+              href={`/${lang}/location`}
+              className={linkStyle}
+              onClick={(dropDown) => setDropDown(!dropDown)}
+            >
               {navigation.location}
             </Link>
-            <Link href={`/${lang}/contact`} className={linkStyle}>
+            <Link
+              href={`/${lang}/contact`}
+              className={linkStyle}
+              onClick={(dropDown) => setDropDown(!dropDown)}
+            >
               {navigation.contact}
             </Link>
             <LangChanger initialLang={lang} />

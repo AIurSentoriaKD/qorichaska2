@@ -7,6 +7,31 @@
     "location": "Ubicación",
     "contact": "Contáctanos"
   },
+  "components": {
+    "cta-reservation": {
+      "mail": "E-Mail",
+      "name": "Nombre",
+      "last-name": "Apellido",
+      "action": "Reservar Ahora"
+    },
+    "contactItems": {
+      "wsp": {
+        "title": "WhatsApp",
+        "content": "¿Tienes alguna pregunta o necesitas asistencia inmediata? ¡Estamos a solo un mensaje de distancia en WhatsApp! Chatea con nosotros ahora para obtener respuestas rápidas y personalizadas.",
+        "action": "Háblanos"
+      },
+      "phone": {
+        "title": "Llamada Telefónica",
+        "content": "Nuestro equipo está listo para atenderte. Si prefieres una conversación personal, no dudes en llamarnos. Estamos disponibles las 24 horas para ayudarte con cualquier solicitud.",
+        "action": "Llámanos"
+      },
+      "email": {
+        "title": "Email",
+        "content": "¿Necesitas información detallada o deseas compartir detalles específicos? Envíanos un correo electrónico y te responderemos con todos los detalles que necesitas para planificar tu estancia.",
+        "action": " Escríbenos"
+      }
+    }
+  },
   "page": {
     "home": {
       "title": "ola",

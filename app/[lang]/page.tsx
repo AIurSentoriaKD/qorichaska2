@@ -4,28 +4,19 @@ import Image from "next/image";
 import CustomButton from "./components/CustomButton";
 import ImageCard from "./components/ImageCard";
 import ContactItem from "./components/ContactItem";
-import GalleryHome from "./components/GalleryHome";
 
 import Reveal from "./components/animation/Reveal";
 import Hover from "./components/animation/Hover";
 import CtaReservation from "./components/CtaReservation";
+import RoomsMinimal from "./components/RoomsMinimal";
 
 export default async function Home({
   params: { lang },
 }: {
   params: { lang: Locale };
 }) {
-  const { page } = await getDictionary(lang);
-  const galleryImages = [
-    "card1.jpg",
-    "card1.jpg",
-    "card1.jpg",
-    "card1.jpg",
-    "card1.jpg",
-    "card1.jpg",
-    "card1.jpg",
-    "card1.jpg",
-  ];
+  const { page, components } = await getDictionary(lang);
+
   console.log(lang);
   return (
     <div className="overflow-hidden">
@@ -116,41 +107,33 @@ export default async function Home({
           />
         </Reveal>
       </div>
-      <CtaReservation />
+      <CtaReservation lang={lang} />
       {/* Contacts Items */}
-      <div className="py-10 md:flex justify-center align-middle gap-10 padding-x mt-10 bg-qori-primary">
+      <div className="py-10 md:flex justify-center align-middle gap-10 padding-x bg-qori-primary">
         <ContactItem
-          tipo="Whatsapp"
-          subtext="Contáctanos por Whatsapp"
-          cta="Cóntactanos"
+          tipo={components.contactItems.wsp.title}
+          subtext={components.contactItems.wsp.content}
+          cta={components.contactItems.wsp.action}
           icon="wsp-icon.svg"
           direction="/wsp"
         />
         <ContactItem
-          tipo="Teléfono"
-          subtext="Contáctanos por Teléfono"
-          cta="Cóntactanos"
+          tipo={components.contactItems.phone.title}
+          subtext={components.contactItems.phone.content}
+          cta={components.contactItems.phone.action}
           icon="call-icon.svg"
           direction="/call"
         />
         <ContactItem
-          tipo="Correo"
-          subtext="Contáctanos por Correo"
-          cta="Cóntactanos"
+          tipo={components.contactItems.email.title}
+          subtext={components.contactItems.email.content}
+          cta={components.contactItems.email.action}
           icon="mail-icon.svg"
           direction="mailto:"
         />
       </div>
       {/* Rooms items gallery mini */}
-      <div className="flex items-center justify-center min-h-96 bg-fixed bg-parallax bg-cover">
-        <div className="bg-black/30 w-full h-full grid lg:grid-cols-4 sm:grid-cols-2">
-          {galleryImages.map((image) => {
-            return (
-              <GalleryHome image={image} key={image} plusclass={"col-auto"} />
-            );
-          })}
-        </div>
-      </div>
+      <RoomsMinimal lang={lang} />
     </div>
   );
 }
