@@ -63,7 +63,14 @@
     },
     "about": {
       "title": "About Us",
-      "description": "This is the about page"
+      "description": "Explore Our History",
+      "slogan": "Tradition, Hospitality, and Dedication at Hostal Qorichaska",
+      "art1": {
+        "pre": "A Charming Traditional Inn Committed to Your Comfort",
+        "first": "At Hostal Qorichaska, we have been dedicated to providing a unique experience for our visitors in Cusco for decades. Our commitment is to offer you the best possible service, ensuring that your stay is unforgettable. While we are a modern hostel in many aspects, our foremost priority is the warmth and tradition that has always characterized us.",
+        "second": "Our goal is for you to take away not only unforgettable memories of your visit to Cusco but also a genuine connection with the rich history and culture of the region. From comfortable rooms to attentive and personalized service, we are here to make your stay exceptional.",
+        "third": "Discover the essence of traditional hospitality at Hostal Qorichaska and let us be your home away from home during your visit to this marvelous city."
+      }
     },
     "services": {
       "title": "services",
@@ -135,7 +142,35 @@
     },
     "location": {
       "title": "location",
-      "description": "page location"
+      "subtitle": "Discover Colonial Charms",
+      "slogan": "Your Gateway to Cusco's Cultural Treasures",
+      "description": "The Qorichaska Hotel is a colonial-style accommodation located in the historic center of the city of Cusco, just three blocks from the main square. From the hotel, you can easily access several tourist attractions, such as the Cusco Cathedral, the Santa Catalina Convent, the central market and the San Pedro train station. The hotel also offers airport shuttle service and free breakfast. The Qorichaska Hotel is an ideal choice for travelers who want to enjoy the beauty and culture of Cusco.",
+      "articles": [
+        {
+          "article": "Cusco Cathedral",
+          "description": "Visit the Cathedral of Cusco, an impressive colonial building that houses works of religious art and a painting of the Last Supper."
+        },
+        {
+          "article": "Santa Catalina Convent",
+          "description": "Tour the Santa Catalina convent, a former nuns' monastery that retains its original architecture and decoration."
+        },
+        {
+          "article": "San Pedro Market",
+          "description": "Explore San Pedro's central market, where you can find a wide variety of local products, from fruits and vegetables to handicrafts and textiles."
+        },
+        {
+          "article": "Train to Ollantaytambo",
+          "description": "Take the train from San Pedro to Ollantaytambo, an Inca village with an impressive fortress and beautiful scenery."
+        },
+        {
+          "article": "Day Trip to Machuppichu",
+          "description": "Take a day trip to Machu Picchu, the lost city of the Incas which is one of the wonders of the world. It can be reached by train or by hiking the Inca Trail."
+        },
+        {
+          "article": "Rainbow Mountain",
+          "description": "Venture to Rainbow Mountain, a natural formation that has vibrant colors due to the minerals that compose it. You can take a hike or an ATV tour."
+        }
+      ]
     }
   }
 }

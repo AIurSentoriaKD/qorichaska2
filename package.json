@@ -12,6 +12,7 @@
     "@formatjs/intl-localematcher": "^0.4.2",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@react-google-maps/api": "^2.19.2",
     "@types/negotiator": "^0.6.1",
     "framer-motion": "^10.16.4",
     "negotiator": "^0.6.3",

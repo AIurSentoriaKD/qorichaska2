@@ -62,8 +62,15 @@
       ]
     },
     "about": {
-      "title": "acerca de ",
-      "description": "acerca de pagina"
+      "title": "Acerca De",
+      "description": "Descubre Nuestra Historia",
+      "slogan": "Tradición, Hospitalidad y Compromiso en el Hostal Qorichaska",
+      "art1": {
+        "pre": "Un Encantador Hostal Tradicional Comprometido con tu Comodidad",
+        "first": "En Hostal Qorichaska, llevamos décadas dedicados a proporcionar una experiencia única a nuestros visitantes en Cusco. Nuestro compromiso es brindarte el mejor servicio posible, garantizando que tu estancia sea inolvidable. Si bien somos un hostal moderno en muchos aspectos, nuestra principal prioridad es la amabilidad y la tradición que siempre nos han caracterizado.",
+        "second": "Nuestro objetivo es que te lleves no solo recuerdos inolvidables de tu visita al Cusco, sino también una conexión auténtica con la rica historia y cultura de la región. Desde cómodas habitaciones hasta un servicio atento y personalizado, estamos aquí para hacer que tu estancia sea excepcional.",
+        "third": "Descubre la esencia de la hospitalidad tradicional en el Hostal Qorichaska y permítenos ser tu hogar lejos de casa durante tu visita a esta maravillosa ciudad."
+      }
     },
     "services": {
       "title": "servicios",
@@ -134,8 +141,36 @@
       "description": "pagina galeria"
     },
     "location": {
-      "title": "ubicacion",
-      "description": "pagina ubicacion"
+      "title": "Ubicación",
+      "subtitle": "Descubre los encantos coloniales",
+      "slogan": "Su puerta de entrada a los tesoros culturales de Cusco",
+      "description": "El hotel Qorichaska es un alojamiento de estilo colonial ubicado en el centro histórico de la ciudad de Cusco, a solo tres cuadras de la plaza principal. Desde el hotel, se puede acceder fácilmente a varios lugares de interés turístico, como la catedral de Cusco, el convento de Santa Catalina, el mercado central y la estación de tren de San Pedro. El hotel también ofrece servicio de traslado al aeropuerto y desayuno gratuito. El hotel Qorichaska es una opción ideal para los viajeros que quieren disfrutar de la belleza y la cultura de Cusco.",
+      "articles": [
+        {
+          "article": "Catedral del Cusco",
+          "description": "Visitar la Catedral de Cusco, un impresionante edificio colonial que alberga obras de arte religioso y una pintura de la última cena."
+        },
+        {
+          "article": "Convento Santa Catalina",
+          "description": "Recorrer el convento de Santa Catalina, un antiguo monasterio de monjas que conserva su arquitectura y decoración originales."
+        },
+        {
+          "article": "Mercado San Pedro",
+          "description": "Explorar el mercado central de San Pedro, donde se puede encontrar una gran variedad de productos locales, desde frutas y verduras hasta artesanías y textiles."
+        },
+        {
+          "article": "Ollantaytambo",
+          "description": "Tomar el tren de San Pedro a Ollantaytambo, un pueblo incaico que tiene una impresionante fortaleza y un hermoso paisaje."
+        },
+        {
+          "article": "Excursiónes a Machupicchu",
+          "description": "Hacer una excursión de un día a Machu Picchu, la ciudad perdida de los incas que es una de las maravillas del mundo. Se puede llegar en tren o en una caminata por el Camino Inca."
+        },
+        {
+          "article": "Montaña Arcoiris",
+          "description": "Aventurarse a la Montaña Arcoíris, una formación natural que tiene colores vibrantes debido a los minerales que la componen. Se puede hacer una caminata o un tour en cuatrimoto."
+        }
+      ]
     }
   }
 }

@@ -87,6 +87,13 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
           >
             {navigation.contact}
           </Link>
+          <Link
+            href={`/${lang}/about`}
+            className={linkStyle}
+            onClick={(dropDown) => setDropDown(!dropDown)}
+          >
+            {navigation.about}
+          </Link>
         </div>
         <LangChanger initialLang={lang} />
       </nav>
@@ -155,6 +162,13 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
               onClick={(dropDown) => setDropDown(!dropDown)}
             >
               {navigation.contact}
+            </Link>
+            <Link
+              href={`/${lang}/about`}
+              className={linkStyle}
+              onClick={(dropDown) => setDropDown(!dropDown)}
+            >
+              {navigation.about}
             </Link>
             <LangChanger initialLang={lang} />
           </div>
