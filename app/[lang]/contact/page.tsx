@@ -2,10 +2,10 @@ import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import Image from "next/image";
 import Reveal from "../components/animation/Reveal";
-import CustomButton from "../components/CustomButton";
 import Hover from "../components/animation/Hover";
+import CustomButton from "../components/CustomButton";
 
-export default async function About({
+export default async function Gallery({
   params: { lang },
 }: {
   params: { lang: Locale };
@@ -28,13 +28,25 @@ export default async function About({
         <div className="flex">
           <div className="flex flex-col py-36 padding-x w-full lg:w-1/2">
             <Reveal>
-              <h1 className="hero__title text-white">{page.about.slogan}</h1>
+              <h1 className="hero__title text-white">
+                {page.location.subtitle}
+              </h1>
             </Reveal>
             <Reveal>
               <p className="hero__subtitle text-gray-200">
-                {page.about.description}
+                {page.location.slogan}
               </p>
             </Reveal>
+            <div className="my-5">
+              <Hover>
+                <Reveal>
+                  <CustomButton
+                    title={page.home["button-text"]}
+                    containerStyles="bg-qori-primary text-white rounded-full hover:bg-qori-accent"
+                  ></CustomButton>
+                </Reveal>
+              </Hover>
+            </div>
           </div>
           <div className="h-full  items-center align-middle absolute right-0 hidden lg:block lg:scale-75">
             <Reveal>
@@ -48,17 +60,6 @@ export default async function About({
               />
             </Reveal>
           </div>
-        </div>
-      </div>
-      {/* Container section */}
-      <div className="bg-qori-primary w-full flex justify-center">
-        <div className=" text-white text-lg p-10 lg:w-1/2 flex flex-col gap-4 text-justify">
-          <h1 className="text-center text-xl font-bold">
-            {page.about.art1.pre}
-          </h1>
-          <p className="text-justify">{page.about.art1.first}</p>
-          <p className="text-justify">{page.about.art1.second}</p>
-          <p className="text-justify">{page.about.art1.third}</p>
         </div>
       </div>
     </div>
