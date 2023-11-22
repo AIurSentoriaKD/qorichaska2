@@ -5,14 +5,13 @@ import { Locale } from "@/i18n.config";
 import Image from "next/image";
 import LangChanger from "./LangChanger";
 import { motion } from "framer-motion";
+import DropDownNavBar from "./DropDownNavBar";
+import ReservationOnNavBar from "./ReservationOnNavBar";
 
 function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
-  const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "-100%" },
-  };
   const [navbar, setNavbar] = useState(false);
   const [dropDown, setDropDown] = useState(false);
+  const [reservaDrop, setReservaDrop] = useState(false);
   const changeBackground = () => {
     //    console.log(window.scrollY);
     if (window.scrollY >= 80) {
@@ -20,7 +19,14 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
     } else {
       setNavbar(false);
     }
+    if (window.scrollY >= 200) {
+      setReservaDrop(true);
+    } else {
+      setReservaDrop(false);
+    }
   };
+
+
   const deployDropdown = () => {
     setDropDown(!dropDown);
     console.log("action drop");
@@ -34,12 +40,13 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
     <header
       className={
         navbar
-          ? `w-full h-20 sticky top-0 z-10 transition-all duration-100 backdrop-blur-md  border-b-2 border-white ${
+          ? `w-full min-h-20 sticky top-0 z-10 transition-all duration-100 backdrop-blur-md  border-b-2 border-white ${
               dropDown ? `bg-black/80` : `bg-black/30`
             }`
-          : `w-full h-20 sticky top-0 z-10 bg-black`
+          : `w-full min-h-20 sticky top-0 z-10 bg-black`
       }
     >
+      {/* NORMAL OPEN NAVBAR */}
       <nav className="hidden md:flex max-w-[1440px] mx-auto justify-between items-center sm:px-16 px-6 py-4 text-white">
         <Link href="/" className="flex justify-center items-center">
           <Image
@@ -51,52 +58,62 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
           />
           <p className="font-extrabold mx-5 text-2xl">Qorichaska Hotel</p>
         </Link>
-        <div className="md:flex hidden gap-5">
-          <Link
-            href={`/${lang}`}
-            className={linkStyle}
-            onClick={(dropDown) => setDropDown(!dropDown)}
-          >
-            {navigation.home}
-          </Link>
-          <Link
-            href={`/${lang}/services`}
-            className={linkStyle}
-            onClick={(dropDown) => setDropDown(!dropDown)}
-          >
-            {navigation.services}
-          </Link>
-          <Link
-            href={`/${lang}/gallery`}
-            className={linkStyle}
-            onClick={(dropDown) => setDropDown(!dropDown)}
-          >
-            {navigation.gallery}
-          </Link>
-          <Link
-            href={`/${lang}/location`}
-            className={linkStyle}
-            onClick={(dropDown) => setDropDown(!dropDown)}
-          >
-            {navigation.location}
-          </Link>
-          <Link
-            href={`/${lang}/contact`}
-            className={linkStyle}
-            onClick={(dropDown) => setDropDown(!dropDown)}
-          >
-            {navigation.contact}
-          </Link>
-          <Link
-            href={`/${lang}/about`}
-            className={linkStyle}
-            onClick={(dropDown) => setDropDown(!dropDown)}
-          >
-            {navigation.about}
-          </Link>
-        </div>
-        <LangChanger initialLang={lang} />
+        {!reservaDrop ? (
+          <>
+            <div className="md:flex hidden gap-5">
+              <Link
+                href={`/${lang}`}
+                className={linkStyle}
+                onClick={(dropDown) => setDropDown(!dropDown)}
+              >
+                {navigation.home}
+              </Link>
+              <Link
+                href={`/${lang}/services`}
+                className={linkStyle}
+                onClick={(dropDown) => setDropDown(!dropDown)}
+              >
+                {navigation.services}
+              </Link>
+              <Link
+                href={`/${lang}/gallery`}
+                className={linkStyle}
+                onClick={(dropDown) => setDropDown(!dropDown)}
+              >
+                {navigation.gallery}
+              </Link>
+              <Link
+                href={`/${lang}/location`}
+                className={linkStyle}
+                onClick={(dropDown) => setDropDown(!dropDown)}
+              >
+                {navigation.location}
+              </Link>
+              <Link
+                href={`/${lang}/contact`}
+                className={linkStyle}
+                onClick={(dropDown) => setDropDown(!dropDown)}
+              >
+                {navigation.contact}
+              </Link>
+              <Link
+                href={`/${lang}/about`}
+                className={linkStyle}
+                onClick={(dropDown) => setDropDown(!dropDown)}
+              >
+                {navigation.about}
+              </Link>
+            </div>
+            <LangChanger initialLang={lang} />
+          </>
+        ) : (
+          <>
+            <ReservationOnNavBar lang={lang} navigation={navigation} />
+            <DropDownNavBar lang={lang} navigation={navigation} />
+          </>
+        )}
       </nav>
+      {/* MOBILE NAVBAR */}
       <nav className="flex sm:hidden relative top-0 text-white justify-between mx-auto px-6 py-4">
         <button className="mx-3" onClick={deployDropdown}>
           <svg
