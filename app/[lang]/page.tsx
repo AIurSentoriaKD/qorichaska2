@@ -248,7 +248,7 @@ export default async function Home({
       </div>
 
       {/* CTA Reservation Card */}
-      <CtaReservation lang={lang} />
+      {/* <CtaReservation lang={lang} /> */}
 
       {/* Contacts Items */}
       <div className="py-10 md:flex justify-center align-middle gap-10 padding-x bg-qori-primary">

@@ -191,7 +191,7 @@ export default async function Services({
         </div>
       </div>
       {/* CTA  */}
-      <CtaReservation lang={lang} />
+      {/* <CtaReservation lang={lang} /> */}
       {/* OPTIONAL SERVICES SECTION */}
       <div className="bg-teal-700 text-white ">
         <div className="py-10">
