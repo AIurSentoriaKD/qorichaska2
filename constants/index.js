@@ -3,8 +3,6 @@ export const footerLinksEN = [
     title: "About",
     links: [
       { title: "About us", url: "/" },
-      { title: "Experience", url: "/" },
-      { title: "Labor", url: "/" },
       { title: "Location", url: "/" },
     ],
   },
@@ -12,8 +10,6 @@ export const footerLinksEN = [
     title: "Company",
     links: [
       { title: "Rooms", url: "/" },
-      { title: "Mission", url: "/" },
-      { title: "Vision", url: "/" },
       { title: "Payment and Procedures", url: "/" },
     ],
   },
@@ -32,8 +28,6 @@ export const footerLinksES = [
     title: "Nosotros",
     links: [
       { title: "Acerca de", url: "/" },
-      { title: "Experiencia", url: "/" },
-      { title: "Labor", url: "/" },
       { title: "Ubicación", url: "/" },
     ],
   },
@@ -41,8 +35,6 @@ export const footerLinksES = [
     title: "Compañia",
     links: [
       { title: "Habitaciones", url: "/" },
-      { title: "Mision", url: "/" },
-      { title: "Vision", url: "/" },
       { title: "Procedimientos de Pago", url: "/" },
     ],
   },
