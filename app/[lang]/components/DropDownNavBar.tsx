@@ -1,5 +1,6 @@
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Locale } from "@/i18n.config";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -20,61 +21,80 @@ export default function DropDownNavBar({
   lang: Locale;
   navigation: Navigation;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const linkStyle =
     "text-black relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer";
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <div className="relative inline-block text-left">
       <div>
-        <Menu.Button className="">
-          <GiHamburgerMenu size="40"/>
-        </Menu.Button>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center focus:outline-none"
+        >
+          <GiHamburgerMenu size="40" />
+        </button>
       </div>
 
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="flex flex-col gap-4 py-4 items-center">
-            <Menu.Item>
-              <Link href={`/${lang}`} className={linkStyle}>
+      {isOpen && (
+        <>
+          {/* Transparent overlay to close the menu on click-outside */}
+          <div
+            className="fixed inset-0 z-10"
+            onClick={() => setIsOpen(false)}
+          />
+
+          <div
+            className="absolute right-0 z-20 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition-all duration-100 scale-100 opacity-100"
+          >
+            <div className="flex flex-col gap-4 py-4 items-center">
+              <Link
+                href={`/${lang}`}
+                className={linkStyle}
+                onClick={() => setIsOpen(false)}
+              >
                 {navigation.home}
               </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link href={`/${lang}/services`} className={linkStyle}>
+              <Link
+                href={`/${lang}/services`}
+                className={linkStyle}
+                onClick={() => setIsOpen(false)}
+              >
                 {navigation.services}
               </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link href={`/${lang}/gallery`} className={linkStyle}>
+              <Link
+                href={`/${lang}/gallery`}
+                className={linkStyle}
+                onClick={() => setIsOpen(false)}
+              >
                 {navigation.gallery}
               </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link href={`/${lang}/location`} className={linkStyle}>
+              <Link
+                href={`/${lang}/location`}
+                className={linkStyle}
+                onClick={() => setIsOpen(false)}
+              >
                 {navigation.location}
               </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link href={`/${lang}/contact`} className={linkStyle}>
+              <Link
+                href={`/${lang}/contact`}
+                className={linkStyle}
+                onClick={() => setIsOpen(false)}
+              >
                 {navigation.contact}
               </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link href={`/${lang}/about`} className={linkStyle}>
+              <Link
+                href={`/${lang}/about`}
+                className={linkStyle}
+                onClick={() => setIsOpen(false)}
+              >
                 {navigation.about}
               </Link>
-            </Menu.Item>
+            </div>
           </div>
-        </Menu.Items>
-      </Transition>
-    </Menu>
+        </>
+      )}
+    </div>
   );
 }
