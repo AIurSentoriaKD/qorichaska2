@@ -1,143 +1,78 @@
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
-import Image from "next/image";
 import MapComponent from "../components/MapComponent";
-import Reveal from "../components/animation/Reveal";
-import Hover from "../components/animation/Hover";
-import CustomButton from "../components/CustomButton";
-import { FaStar } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 import TouristicInfoCard from "../components/TouristicInfoCard";
 
-export default async function Services({
-  params: { lang },
+const copy: Record<Locale, { mapTitle: string; mapEyebrow: string }> = {
+  en: {
+    mapTitle: "Three blocks from Cusco's main square",
+    mapEyebrow: "Historic center",
+  },
+  es: {
+    mapTitle: "A tres cuadras de la plaza principal del Cusco",
+    mapEyebrow: "Centro historico",
+  },
+};
+
+const attractionImages = [
+  "/catedralfull.png",
+  // TODO image asset: replace with a 1200x800px photo of Santa Catalina Convent.
+  "/catedralfull.png",
+  // TODO image asset: replace with a 1200x800px photo of San Pedro Market.
+  "/catedralfull.png",
+  // TODO image asset: replace with a 1200x800px photo of Ollantaytambo.
+  "/machu2.png",
+  "/machu.png",
+  // TODO image asset: replace with a 1200x800px photo of Rainbow Mountain.
+  "/machu2.png",
+];
+
+export default async function Location({
+  params,
 }: {
-  params: { lang: Locale };
+  params: Promise<{ lang: string }>;
 }) {
-  const { page } = await getDictionary(lang);
+  const { lang } = await params;
+  const langLocale = lang as Locale;
+  const { page } = await getDictionary(langLocale);
 
   return (
     <div className="overflow-hidden">
-      {/* Hero Section */}
-      <div className="relative w-full h-screen/2">
-        <Image
-          src="/cusco-2.jpg"
-          alt="mainimage"
-          className="h-full w-full object-contain absolute"
-          width={1700}
-          height={1700}
-          style={{ objectFit: "cover" }}
-        />
-        <div className="w-full h-full bg-gradient-to-r from-black/50 left-0 absolute" />
-        <div className="flex">
-          <div className="flex flex-col py-36 padding-x w-full lg:w-1/2">
-            <Reveal>
-              <h1 className="hero__title text-white">
-                {page.location.subtitle}
-              </h1>
-            </Reveal>
-            <Reveal>
-              <p className="hero__subtitle text-gray-200">
-                {page.location.slogan}
-              </p>
-            </Reveal>
-            <div className="my-5">
-              <Hover>
-                <Reveal>
-                  <CustomButton
-                    title={page.home["button-text"]}
-                    containerStyles="bg-qori-primary text-white rounded-full hover:bg-qori-accent"
-                  ></CustomButton>
-                </Reveal>
-              </Hover>
-            </div>
-          </div>
-          <div className="h-full  items-center align-middle absolute right-0 hidden lg:block lg:scale-75">
-            <Reveal>
-              <Image
-                src="/hero.png"
-                alt="mainimage"
-                className=""
-                width={640}
-                height={640}
-                style={{ objectFit: "cover" }}
-              />
-            </Reveal>
+      <PageHero
+        lang={langLocale}
+        eyebrow={page.location.title}
+        title={page.location.subtitle}
+        description={page.location.slogan}
+        image="/cusco-2.jpg"
+      />
+
+      <section className="qori-section bg-white">
+        <div className="qori-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <article className="qori-card p-8 md:p-12">
+            <p className="qori-label mb-4">{copy[langLocale].mapEyebrow}</p>
+            <h2 className="qori-heading">{copy[langLocale].mapTitle}</h2>
+            <p className="qori-subheading mt-6">{page.location.description}</p>
+          </article>
+          <div className="overflow-hidden rounded-3xl border border-qori-outline/15 shadow-[0_24px_60px_rgba(147,48,24,0.08)]">
+            <MapComponent />
           </div>
         </div>
-      </div>
-      {/* SUB PARAGRAPH */}
-      <div className="flex flex-col lg:flex-row md:m-5 bg-slate-100 drop-shadow-lg">
-        <div className="md:w-1/2 w-full md:align-bottom flex flex-col justify-end md:m-5">
-          <div className="flex justify-center">
-            <FaStar size={35} />
-          </div>
-          <h1 className="text-[50px] font-bold my-5 text-center w-full">
-            {page.location.title}
-          </h1>
-          <p className="text-xl font-extralight text-justify">
-            {page.location.description}
-          </p>
+      </section>
+
+      <section className="qori-section qori-pattern bg-qori-surface-low">
+        <div className="qori-container relative space-y-6">
+          {page.location.articles.map((article, index) => (
+            <TouristicInfoCard
+              key={article.article}
+              order={index % 2 === 0}
+              title={article.article}
+              subtitle={article.description}
+              image={attractionImages[index]}
+            />
+          ))}
         </div>
-        <MapComponent />
-        {/* <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d342.8852952636169!2d-71.98379186275125!3d-13.516909025162873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd67130a0f86d%3A0x766e5366d8e8f062!2sHostal%20Qorichaska!5e0!3m2!1ses!2spe!4v1699894595946!5m2!1ses!2spe"
-        width="600"
-        height="450"
-        className="border:0;"
-        loading="lazy"
-        ></iframe> */}
-      </div>
-      {/* TOURISTIC INFO CARDS */}
-      <div className="flex flex-col justify-center items-center">
-        <Reveal delay={0.3}>
-          <TouristicInfoCard
-            order={true}
-            title={page.location.articles[0].article}
-            subtitle={page.location.articles[0].description}
-            image="/catedralfull.png"
-          />
-        </Reveal>
-        <Reveal delay={0.3}>
-          <TouristicInfoCard
-            order={false}
-            title={page.location.articles[1].article}
-            subtitle={page.location.articles[1].description}
-            image="/catedralfull.png"
-          />
-        </Reveal>
-        <Reveal delay={0.3}>
-          <TouristicInfoCard
-            order={true}
-            title={page.location.articles[2].article}
-            subtitle={page.location.articles[2].description}
-            image="/catedralfull.png"
-          />
-        </Reveal>
-        <Reveal delay={0.3}>
-          <TouristicInfoCard
-            order={false}
-            title={page.location.articles[3].article}
-            subtitle={page.location.articles[3].description}
-            image="/catedralfull.png"
-          />
-        </Reveal>
-        <Reveal delay={0.3}>
-          <TouristicInfoCard
-            order={true}
-            title={page.location.articles[4].article}
-            subtitle={page.location.articles[4].description}
-            image="/catedralfull.png"
-          />
-        </Reveal>
-        <Reveal delay={0.3}>
-          <TouristicInfoCard
-            order={false}
-            title={page.location.articles[5].article}
-            subtitle={page.location.articles[5].description}
-            image="/catedralfull.png"
-          />
-        </Reveal>
-      </div>
+      </section>
     </div>
   );
 }

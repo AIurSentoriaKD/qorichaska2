@@ -1,49 +1,32 @@
 "use client";
 
-import { redirect, usePathname } from "next/navigation";
-import { i18n } from "@/i18n.config";
-import { Fragment, useState } from "react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
-import { Listbox, Transition } from "@headlessui/react";
-import { Locale } from "@/i18n.config";
+import { i18n, Locale } from "@/i18n.config";
 import { LangChangerProps } from "@/types";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Fragment, useState } from "react";
 
 function LangChanger({ initialLang }: LangChangerProps) {
   const pathName = usePathname();
+  const [selectedLang, setSelectedLang] = useState<Locale>(initialLang);
 
   const redirectedPathName = (locale: string) => {
-    if (!pathName) return "/";
+    if (!pathName) return `/${locale}`;
     const segments = pathName.split("/");
     segments[1] = locale;
-    //return redirect(segments.join("/"));
     return segments.join("/");
   };
-  const [selectedLang, setSelectedLang] = useState(initialLang);
-
-  // {
-  //   i18n.locales.map((lang) => (
-  //     <Link
-  //       href={redirectedPathName(lang)}
-  //       className="rounded-md border bg-black px-3 py-2 text-white"
-  //       key={lang}
-  //     >
-  //       {lang}
-  //     </Link>
-  //   ));
-  // }
 
   return (
-    <div className="w-40 sm:w-20 text-black">
+    <div className="w-24 text-qori-ink">
       <Listbox value={selectedLang} onChange={setSelectedLang}>
-        <div className="relative mt-1">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+        <div className="relative">
+          <Listbox.Button className="relative w-full cursor-pointer rounded-full border border-qori-outline/30 bg-white/80 py-2 pl-4 pr-9 text-left text-sm font-bold uppercase tracking-[0.05em] text-qori-primary shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-qori-accent">
             <span className="block truncate">{selectedLang}</span>
-            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-              <ChevronUpDownIcon
-                className="h-5 w-5 text-gray-400"
-                aria-hidden="true"
-              />
+            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+              <ChevronUpDownIcon className="h-4 w-4 text-qori-outline" />
             </span>
           </Listbox.Button>
           <Transition
@@ -52,33 +35,33 @@ function LangChanger({ initialLang }: LangChangerProps) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {i18n.locales.map((lang) => (
+            <Listbox.Options className="absolute right-0 mt-2 max-h-60 w-full overflow-auto rounded-2xl border border-qori-outline/20 bg-white py-2 text-sm shadow-xl focus:outline-none">
+              {i18n.locales.map((locale) => (
                 <Listbox.Option
-                  key={lang}
+                  key={locale}
+                  value={locale}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? "bg-amber-100 text-amber-900" : "text-gray-900"
+                    `relative cursor-pointer select-none py-2 pl-9 pr-3 ${
+                      active ? "bg-qori-surface-low text-qori-primary" : "text-qori-muted"
                     }`
                   }
-                  value={lang}
                 >
                   {({ selected }) => (
                     <>
                       <Link
-                        href={redirectedPathName(lang)}
-                        className={`block truncate ${
-                          selected ? "font-medium" : "font-normal"
+                        href={redirectedPathName(locale)}
+                        className={`block truncate uppercase ${
+                          selected ? "font-extrabold" : "font-semibold"
                         }`}
                       >
-                        {lang}
+                        {locale}
                       </Link>
                       {selected ? (
                         <Link
-                          href={redirectedPathName(lang)}
-                          className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                          href={redirectedPathName(locale)}
+                          className="absolute inset-y-0 left-0 flex items-center pl-3 text-qori-primary"
                         >
-                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                          <CheckIcon className="h-4 w-4" aria-hidden="true" />
                         </Link>
                       ) : null}
                     </>

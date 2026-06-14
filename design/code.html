@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hotel Qorichaska | Sanctuary of Andean Heritage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#57423d",
+                    "secondary-fixed": "#d6e3ff",
+                    "primary": "#933018",
+                    "background": "#fcf9f3",
+                    "on-primary-fixed": "#3d0700",
+                    "surface-container": "#f0eee8",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf9f3",
+                    "on-secondary-fixed-variant": "#2d476f",
+                    "on-primary-container": "#ffe5df",
+                    "tertiary-container": "#cca72f",
+                    "surface-bright": "#fcf9f3",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1c1c18",
+                    "secondary-fixed-dim": "#adc7f7",
+                    "on-background": "#1c1c18",
+                    "primary-fixed": "#ffdad2",
+                    "surface-container-high": "#ebe8e2",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "secondary-container": "#b6d0ff",
+                    "on-tertiary-container": "#4e3d00",
+                    "outline-variant": "#dec0b9",
+                    "surface-container-highest": "#e5e2dc",
+                    "inverse-on-surface": "#f3f0ea",
+                    "on-secondary-fixed": "#001b3c",
+                    "secondary": "#455f88",
+                    "tertiary-fixed": "#ffe088",
+                    "surface-dim": "#dcdad4",
+                    "outline": "#8a716c",
+                    "primary-fixed-dim": "#ffb4a3",
+                    "on-secondary-container": "#3f5882",
+                    "surface-tint": "#a43c23",
+                    "surface-container-low": "#f6f3ed",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#31312d",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#ffb4a3",
+                    "surface-variant": "#e5e2dc",
+                    "primary-container": "#b3472d",
+                    "on-primary-fixed-variant": "#84250e",
+                    "tertiary": "#735c00",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Libre Caslon Text"],
+                    "headline-sm": ["Libre Caslon Text"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg": ["Libre Caslon Text"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .arch-mask {
+            clip-path: ellipse(50% 70% at 50% 70%);
+        }
+        .inca-pattern {
+            background-image: radial-gradient(#933018 0.5px, transparent 0.5px), radial-gradient(#933018 0.5px, #fcf9f3 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.05;
+        }
+        .text-glow-gold {
+            text-shadow: 0 0 10px rgba(204, 167, 47, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 border-b border-outline-variant/30">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight" href="#">Hotel Qorichaska</a>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary pb-1" href="#">Sanctuary</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Accommodations</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Our Story</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Experiences</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Journal</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block font-label-md text-label-md text-primary hover:bg-primary/5 px-4 py-2 rounded-lg transition-all active:scale-95">Sign In</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95">Book Now</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-[0.85]" data-alt="A panoramic high-angle view of the historic city of Cusco, Peru, during the golden hour. The terracotta-tiled roofs and colonial spires are bathed in warm, ethereal sunset light, creating a serene and timeless atmosphere. The style is sophisticated and evocative of premium travel photography, focusing on the rich architectural heritage and the soft mountain light of the Andes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJPTGQLHf9cU3dvG5BVplkLSnv4TRHnJcg9Tb--bWeaO92oJVTg4uaCFfT8zGgROB_oeLwSRikKxLvvUZ5bL3M4qQ07WCgOgaqJcmx_pBp5RUhCwpN3fOjSjb8VICDxK422iVUyDvEsQgvj5PxlvuYDLIUL06nqdYA00lVvWKU5-KfS55CmV3t9JcCFqwiPcmqweZH95v5B3zKrvg7-lDuIkfU_yA3xxiCqn69B4IJtOKAb6CiSmvsdS6k_rI43kWJpIaIQ3fdjYE"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent opacity-80"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-background mb-6 leading-tight">
+                    Your Sanctuary in the <span class="text-primary italic">Heart of the Andes</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    Experience authentic Peruvian hospitality where ancient Incan walls meet modern colonial luxury. A haven of peace just steps from the historic Plaza de Armas.
+                </p>
+<!-- Reservation Bar -->
+<div class="bg-white p-2 rounded-2xl md:rounded-full shadow-2xl flex flex-col md:flex-row items-center gap-2 max-w-4xl border border-outline-variant/20">
+<div class="flex-1 flex items-center px-6 py-3 w-full border-b md:border-b-0 md:border-r border-outline-variant/30">
+<span class="material-symbols-outlined text-tertiary mr-3" data-icon="calendar_today">calendar_today</span>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Check In</span>
+<input class="bg-transparent border-none p-0 focus:ring-0 text-sm font-semibold w-full" type="text" value="24 Oct 2024"/>
+</div>
+</div>
+<div class="flex-1 flex items-center px-6 py-3 w-full border-b md:border-b-0 md:border-r border-outline-variant/30">
+<span class="material-symbols-outlined text-tertiary mr-3" data-icon="event_available">event_available</span>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Check Out</span>
+<input class="bg-transparent border-none p-0 focus:ring-0 text-sm font-semibold w-full" type="text" value="30 Oct 2024"/>
+</div>
+</div>
+<div class="flex-1 flex items-center px-6 py-3 w-full">
+<span class="material-symbols-outlined text-tertiary mr-3" data-icon="group">group</span>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Guests</span>
+<select class="bg-transparent border-none p-0 focus:ring-0 text-sm font-semibold w-full cursor-pointer">
+<option>2 Adults, 1 Child</option>
+<option>1 Adult</option>
+<option>2 Adults</option>
+</select>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-10 py-4 rounded-xl md:rounded-full font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center gap-2">
+                        SEARCH <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Floating Decorative Element -->
+<div class="absolute bottom-20 right-20 hidden lg:block animate-bounce">
+<div class="bg-tertiary-container text-on-tertiary-container p-6 rounded-2xl shadow-xl rotate-3 flex items-center gap-4 border-2 border-white">
+<span class="material-symbols-outlined text-3xl" data-icon="local_activity">local_activity</span>
+<div>
+<p class="text-xs font-bold opacity-80 uppercase tracking-tighter">Limited Offer</p>
+<p class="font-headline-sm text-headline-sm">Get 20% Off</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners Section -->
+<section class="py-12 bg-surface-container-low border-y border-outline-variant/20 overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+<span class="font-headline-sm italic text-outline flex items-center gap-2"><span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span> PROMPERÚ</span>
+<span class="font-headline-sm italic text-outline flex items-center gap-2"><span class="material-symbols-outlined" data-icon="temple_buddhist">temple_buddhist</span> CUSCO HERITAGE</span>
+<span class="font-headline-sm italic text-outline flex items-center gap-2"><span class="material-symbols-outlined" data-icon="public">public</span> NATIONAL TRUST</span>
+<span class="font-headline-sm italic text-outline flex items-center gap-2"><span class="material-symbols-outlined" data-icon="stars">stars</span> LUXURY ANDES</span>
+</div>
+</section>
+<!-- Featured Accommodations -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-4">Exceptional Stays</h2>
+<p class="text-on-surface-variant max-w-xl">Each room at Qorichaska is a blend of history and luxury, featuring authentic colonial architecture and modern comforts.</p>
+</div>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 hover:translate-x-2 transition-transform" href="#">VIEW ALL SUITES <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A luxurious hotel suite with a grand colonial-style bed featuring carved dark wood and pristine white linens. The room has high ceilings with exposed wooden beams and large arched windows overlooking a cobblestone courtyard. The atmosphere is warm and elegant, with soft terracotta and gold accents throughout. High-end modern sanctuary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUS3rZml2Fj_mKc3S7VYNdKSuD1GqUpAwFtPrsIpwIY1ZoO46YHiGvk5PdaFT6RlEmH6MPUQYLQ9ciKY_rTkAEQKo-oEmMFNMfGQ5z0JixBTdBvp9fF5LSFT3BrPROwHK-lg5LQImXWAClUjhDj1iRMreYEwl-BkJ7NFOvvxH5Ef4nCLd9lvUP3ePHWoKY8VaehZtLXA1qnyn69PG3PNHFYFQ2TK7iRIMuGGcxxpB0Cvwrn2ZTaPInLacVdIrAb4hnHo0c_RqsZlk"/>
+<div class="absolute top-4 right-4 bg-tertiary/90 backdrop-blur text-white px-3 py-1 rounded-full flex items-center gap-1 text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+                        </div>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2">Inka Royal Suite</h3>
+<p class="text-sm text-outline mb-6">Original Incan wall segments, private balcony, marble bath.</p>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/20">
+<p class="text-primary font-bold text-lg">$450 <span class="text-xs text-outline font-normal">/ NIGHT</span></p>
+<button class="bg-surface-container hover:bg-primary hover:text-white p-3 rounded-full transition-colors group-hover:rotate-45">
+<span class="material-symbols-outlined" data-icon="arrow_outward">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A colonial-style bedroom in Cusco, Peru, with white plaster walls and dark wood furniture. A small desk sits near a window with handmade lace curtains. The floor is made of traditional terracotta tiles covered with a colorful hand-woven Andean rug. Soft, moody morning light creates a peaceful and authentic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCISU4No7M3LA-Hd_ZkkJoUIuffVBDCB5WgSuK_pBh5dvQZ3SGRCKHE7pAXGyS5joJc2_GioYIatDoQwO5N-JVXwjYBnZuTnVvFNql-3eTFEQ45PWI_L8Xk67QjI6TBnxcRkuloiTXH3av-neqXTQYWqIbmwzTjpnJq9gfRhDpsYDa7M7WW8kHhSPCPrdBoY_HX8Lgw6iTgBYAYk-NYgZPD6rhOLaSlLAWDGLC9aC876S8XPw9a9xwczSAxRWJm_uF9cnwh5Y3eu_g"/>
+<div class="absolute top-4 right-4 bg-tertiary/90 backdrop-blur text-white px-3 py-1 rounded-full flex items-center gap-1 text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span> 4.8
+                        </div>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2">Colonial Deluxe</h3>
+<p class="text-sm text-outline mb-6">Hand-carved furniture, queen bed, high ceilings.</p>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/20">
+<p class="text-primary font-bold text-lg">$320 <span class="text-xs text-outline font-normal">/ NIGHT</span></p>
+<button class="bg-surface-container hover:bg-primary hover:text-white p-3 rounded-full transition-colors group-hover:rotate-45">
+<span class="material-symbols-outlined" data-icon="arrow_outward">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-outline-variant/10">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A cozy, authentic room featuring vibrant Andean textile patterns on pillows and throws. The light is soft and inviting, highlighting the texture of the stone walls and the warmth of the wooden ceiling. A small vase with local wildflowers sits on a side table, emphasizing a personalized, artisanal hospitality experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO5BTa46dRI0QLchnS8sqWIhgsYEzy-qzIbDlyqRo-vjsut5GoFQLNvuciqPK4ewPDY5h7b0wg4XzkKrNb6b_HJRreTr_DtxQAkfYf2BfjnUI8jB316srpxztgaBundJtKWXa4S0ui3H5XHiagYM-I0BTB5nZ33JBnDZiugusvmPeF6SVOmtnLC8E_qqiufATk1939f4q4avJgl5YXxdBdcmjndL_COkGF3em_TfAlFAwRFaan9nYwlPYMvllfroERQtr9cbDLYhQ"/>
+<div class="absolute top-4 right-4 bg-tertiary/90 backdrop-blur text-white px-3 py-1 rounded-full flex items-center gap-1 text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+                        </div>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2">Andean Standard</h3>
+<p class="text-sm text-outline mb-6">Textile-inspired decor, king bed, courtyard views.</p>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/20">
+<p class="text-primary font-bold text-lg">$210 <span class="text-xs text-outline font-normal">/ NIGHT</span></p>
+<button class="bg-surface-container hover:bg-primary hover:text-white p-3 rounded-full transition-colors group-hover:rotate-45">
+<span class="material-symbols-outlined" data-icon="arrow_outward">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section (Asymmetric Collage) -->
+<section class="py-32 bg-surface-container-highest relative overflow-hidden">
+<div class="inca-pattern absolute inset-0"></div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div class="flex gap-4">
+<div class="w-1/2 aspect-[3/4] rounded-full overflow-hidden border-8 border-white shadow-xl translate-y-12">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a traditional Peruvian breakfast tray featuring fresh passion fruit, warm artisan bread, and a cup of aromatic coca tea. The tray is set against a backdrop of a sun-drenched colonial courtyard with vibrant flowers. The lighting is bright and cheerful, emphasizing fresh ingredients and warm Andean hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAelvKrakOfrZgIftnzu5xFTYqagdw-LRG50pLzpr8RuHyNNRubVqHG4IuzOFOFZTrNgiT0niQQk_NCiNLMudkfwKSOTocSbo1k5QVKF_HZFBiSI0A_7N-ZVkp3tRW9PKwv939Ex6B0fVMOb1_7YtEu8miOaiqTKDwOEzTsDB2Uf804HA8zw05BcnTzTnafURTiUlfp2d-QgcFom-ObEmLedCHAIEkFBR7Jy3kWIg7Dq5kZi-xS5qlc9zkESIbYWYbYzFcl5RS_lJw"/>
+</div>
+<div class="w-1/2 aspect-[3/4] rounded-full overflow-hidden border-8 border-white shadow-xl -translate-y-12">
+<img class="w-full h-full object-cover" data-alt="A beautifully restored colonial archway made of white stone, leading into a lush hidden garden with a central fountain. The archway is draped in bougainvillea flowers. The aesthetic is serene, historic, and luxury-focused, capturing the quiet elegance of a boutique sanctuary in Cusco." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwzvi5M7PiAAs-GnQvjlrACIF-lT5xUJ_mnswQlH8iJXlWR-2PZUDx7_jxm1smNDj1-SkmX_k3PSPt-5R6LrzmJUPavTGRcCRKMNV2vglCzArwbZb7IYZzcKkM1EtuMLqljYXeng19l89NdIVw6sWGirVRoWqqNB7Wkr-2BTBZsOgtcnxs56xkIbvCb6W_DrBeS5orsbK8KBYNP2CSmZ94Y45hv-JhhkljSqf7JB_f3O4_uUB9-eHAizue_TN9dU7kw8wDMfXHTPs"/>
+</div>
+</div>
+<div class="w-full h-64 rounded-3xl overflow-hidden border-8 border-white shadow-xl">
+<img class="w-full h-full object-cover" data-alt="The majestic Machu Picchu ruins at dawn, with soft clouds floating through the emerald green mountain peaks. The light is diffused and mystical, highlighting the incredible stone craftsmanship. A high-resolution, awe-inspiring travel shot that evokes the spirit of exploration and ancient mystery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW7nnyHYbWCfF03lK59e9aoohzPeEBZ_fUkztfrbSYWLJB_A-7gC15zsLIhAUK5vGKm_s_UYwTD8TU2TcohXE34_VsgMj-Ly0HsaDQ65soIbztRIqupnLw7uPnZaDZpO-feXo-a8bECnNDDQ-6D9BdY8WVgnT0e349asr226NJbCbCL1Y_3PaivgAHZR66AQMmtqiUju3K9VJZz_MmGu0D5AD2YgFPzlVhBsRwWItcimGXzmD9CCisIWWyJ05jcypDA72tVYTkruI"/>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-display-lg text-display-lg mb-8">Unforgettable Memories in the Sacred Valley</h2>
+<p class="text-body-lg text-on-surface-variant mb-12">
+                            More than a hotel, Qorichaska is your gateway to the spirit of Peru. We curate personalized journeys, from private treks to the Lost City to artisanal weaving workshops with local maestros.
+                        </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-12 border-t border-outline-variant/30">
+<div>
+<p class="text-primary font-headline-md text-headline-md mb-1">15+</p>
+<p class="text-xs font-bold uppercase tracking-widest text-outline">Years of Tradition</p>
+</div>
+<div>
+<p class="text-primary font-headline-md text-headline-md mb-1">50k+</p>
+<p class="text-xs font-bold uppercase tracking-widest text-outline">Happy Guests</p>
+</div>
+<div>
+<p class="text-primary font-headline-md text-headline-md mb-1">5★</p>
+<p class="text-xs font-bold uppercase tracking-widest text-outline">Peruvian Service</p>
+</div>
+</div>
+<div class="mt-16">
+<button class="group bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md flex items-center gap-4 hover:shadow-xl hover:shadow-primary/30 transition-all">
+                                EXPLORE EXPERIENCES
+                                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Local Journal (Bento Style) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg mb-4">The Local Journal</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Stories, secrets, and guides to the cultural heart of the Andes, written by those who call Cusco home.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-gutter h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-3xl bg-surface-dim">
+<img class="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-1000" data-alt="A vibrant Inti Raymi festival scene in Cusco, featuring performers in elaborate traditional Incan costumes with gold sun disks and colorful woven textiles. The plaza is crowded under a clear blue sky. The image captures the energy, color, and cultural pride of the celebration in a vivid, high-contrast documentary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8nvXWlwh7zV3a7hgE-R_EiQUTRLy7JP1GbwhiXSJvQ-QQS2cMBwe_3SXcwWKKYV83nyuIpj3_yWbYiye1JH1jY4i2RzvjOdg23_fa2EbXLC-Bycn-3GGJ2qCYYtX7MTx7GvIHeaEifWBB5LxVrnT8K3Zn9D_22IcV-SFJIBGpjteZSFtACfSBp9zxlt1l3W_jzm-FK02NlKVfNd7yNt4L7hjo_IF_Qycs1sZdzs6boxTaAgSaCxSPtPgHLT2c8y9iYpcGeiM90JQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-10">
+<span class="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">CULTURE</span>
+<h3 class="text-white font-headline-md text-headline-md mb-4">The Magic of Inti Raymi: Celebrating the Sun God</h3>
+<a class="text-white font-label-md text-label-md flex items-center gap-2" href="#">READ ARTICLE <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></a>
+</div>
+</div>
+<div class="md:col-span-2 group relative overflow-hidden rounded-3xl bg-surface-dim">
+<img class="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-1000" data-alt="A steaming plate of gourmet Lomo Saltado in a dimly lit, high-end restaurant in Cusco. The table is made of rustic wood, and the lighting is warm and focused on the rich textures of the food. A moody, elegant gastronomic shot emphasizing culinary sophistication and local flavors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4aGUO0AGBXBTfLmc_uN8AJWThnQRUfVLPD85te15MF4RKg1u2sFLUoIPUPPCavzf06WGNOoEftmNRpseGUMv0-ed3eWsEgyJ7uW1pMcIinCLm2_NYfMhTwGJMMSakb85-_Oz4BMQV9X8zkISex_qzM7RP8l7H16p9ORwXEhrDKfvJyNzTs_LJayczX2S_N5yqnJxYzfLaMWuwIh4CPO_4HPxryMk_r0HVo6ftI9BrlwJ13fO19H01POO7cQQjRkwY0uyNlBgvDpI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-8">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2 inline-block">GASTRONOMY</span>
+<h3 class="text-white font-headline-sm text-headline-sm">Cusco's Secret Culinary Spots</h3>
+</div>
+</div>
+<div class="md:col-span-1 group relative overflow-hidden rounded-3xl bg-surface-dim">
+<img class="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-1000" data-alt="Close-up of intricate hand-woven Andean textiles showing geometric patterns in earthy reds, oranges, and blues. The texture of the wool is clearly visible. The lighting is soft and natural, emphasizing the artisanal craft and rich heritage of the highlands. Modern cultural aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMUlk6f2BN7V3Vuz9-Vz6u-G__gcaiRQrzGT-_JgFIHEeWchVl7k6LOmIMdx-Aw_E-ETuKKBa96vAF7IhYMKboC-CVEgg_lHvptyJ6NyxM_gCBtfx9izCrZidlBs1pqX9Weh5zn-prOVj5HvVr0A-BVXf59lijdFJo4BXrK0hEhvbQCbzvhljAj9lmdx7zaqQaZpZN1pJoDMd8VQhpk802H0mYh6uiia7f-LkX-Nn5bMavqdpOIjVuu-hlTs0F2SIdRZyTnNkXcbU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-6">
+<h3 class="text-white font-label-md text-label-md">Traditional Textiles of the Highlands</h3>
+</div>
+</div>
+<div class="md:col-span-1 group relative overflow-hidden rounded-3xl bg-surface-dim">
+<img class="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-1000" data-alt="A hidden cobblestone alley in Cusco's San Blas district, with white-washed walls and blue-painted doors. Potted geraniums line the narrow street. The perspective is looking uphill towards the mountains under a crisp afternoon sky. A peaceful and evocative image of local daily life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjy6byGjjsVSMpFbdWLrPIz9vYP4b8bzF7Za7HCXkphOiF0-Rp5Mf-3012EifZwEl_cF23AvkDIBLh743FzHiACrTTUA0Agsk6TbfiP0IXC1330zLoAhRwiVvgKgPzCnN5ikaVZ2kdjWqiNJrKAHZp6EndIYfH0g3WTKobue1cqMyA4D7JuHAzaD4ibXf0oN--_1JUvW9ceoGdH1-IRfunmYePoW_3FXUoTvKjQaBmgpfe1b-5dMVS5lJZ0RgAjgMFmgm2NkAdF-0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-6">
+<h3 class="text-white font-label-md text-label-md">A Guide to San Blas</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section class="py-24 bg-background relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[400px] text-primary" data-icon="format_quote">format_quote</span>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto text-center relative z-10">
+<div class="flex justify-center mb-10">
+<div class="flex gap-1 text-tertiary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<blockquote class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-10 italic leading-relaxed">
+                    "Staying at Qorichaska felt like being invited into a grand home. The staff's warmth and the incredible history in the very walls made our trip to Peru truly magical."
+                </blockquote>
+<div class="flex items-center justify-center gap-4">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="A portrait of a sophisticated woman in her 30s with a warm and genuine smile, wearing a stylish neutral-toned travel outfit. The background is softly blurred, suggesting a high-end hotel courtyard or lounge. The lighting is flattering and natural, capturing a moment of relaxed luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP0bT4jP7gtP6oGaM9716s6TQOazv8FP_kNiGABjwtH00ZmX3Tc_MTIPkjF5hv7cGfQ99WO0tZsscw10-W4JbLKaPjnQIzTR0U8OeGlfYh1X7cckAy_i2blOoa8DaYOzrozBAmih3yXmfZQ5YvA1DMfUqtVnPI6d9Gu5bQFt9pSokHagoc--1sXPNAh2YAI-fLWgm1EEfx8ZFNHa1YZnmyH4zF-r9JjnTiOkJS3161nNRwbjs6aOBBndbcz0ZKT5xzBvwzQlEpqSw"/>
+</div>
+<div class="text-left">
+<p class="font-bold text-lg">Elena Montgomery</p>
+<p class="text-xs font-bold uppercase tracking-widest text-outline">London, United Kingdom</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="bg-primary-container rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')] opacity-10"></div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-headline-lg text-on-primary-container mb-6">Subscribe to Our Journal</h2>
+<p class="text-on-primary-container/80 max-w-lg mx-auto mb-10">Get seasonal travel guides, exclusive member rates, and cultural stories delivered to your inbox.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/60 rounded-full px-8 py-4 focus:ring-tertiary focus:border-tertiary transition-all backdrop-blur-md" placeholder="Your email address" type="email"/>
+<button class="bg-tertiary-container text-on-tertiary-container px-10 py-4 rounded-full font-label-md text-label-md hover:scale-105 transition-transform active:scale-95 whitespace-nowrap">SIGN UP</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full rounded-t-[40px] border-t-4 border-tertiary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<a class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim block mb-6" href="#">Hotel Qorichaska</a>
+<p class="text-on-surface-variant text-body-md mb-8">A sanctuary of Andean heritage in the heart of Cusco. Founded on the principles of hospitality, history, and comfort.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined" data-icon="chat">chat</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Our Story</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Rooms &amp; Suites</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Dining Experience</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Wellness &amp; Spa</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Local Guides</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Machu Picchu Tours</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Sacred Valley Trips</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Cusco City Walk</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Andean Textiles</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Contact Us</h4>
+<p class="text-on-surface-variant text-body-md mb-4">Calle Nueva Alta 456,<br/>Cusco, Peru 08000</p>
+<p class="text-on-surface-variant text-body-md mb-2">reservations@qorichaska.pe</p>
+<p class="text-on-surface-variant text-body-md">+51 84 221 004</p>
+</div>
+</div>
+<div class="px-margin-desktop py-8 border-t border-outline-variant/20 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-md text-label-md text-on-surface-variant opacity-70">© 2024 Hotel Qorichaska Cusco. A sanctuary of Andean heritage.</p>
+<div class="flex gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for reservation bar
+        document.querySelectorAll('input, select').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.closest('div').classList.add('bg-primary/5');
+            });
+            el.addEventListener('blur', () => {
+                el.closest('div').classList.remove('bg-primary/5');
+            });
+        });
+
+        // Simple scroll animation for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('py-2', 'shadow-md');
+                nav.classList.add('py-4');
+            }
+        });
+    </script>
+</body></html>

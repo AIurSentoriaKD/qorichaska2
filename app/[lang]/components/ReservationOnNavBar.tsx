@@ -7,10 +7,8 @@ import { FaPerson } from "react-icons/fa6";
 import { FaChild } from "react-icons/fa";
 function ReservationOnNavBar({
   lang,
-  navigation,
 }: {
   lang: Locale;
-  navigation: any;
 }) {
   const [date, setDate] = useState<DateValueType>(null);
   let footerDateOptions = { cancel: "Cancelar", apply: "Aceptar" };

@@ -1,71 +1,113 @@
+import { Locale } from "@/i18n.config";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { footerLinksEN, footerLinksES } from "@/constants";
-import { Locale } from "@/i18n.config";
+
+const footerCopy: Record<
+  Locale,
+  {
+    rights: string;
+    privacy: string;
+    terms: string;
+    columns: { title: string; links: { title: string; url: string }[] }[];
+  }
+> = {
+  en: {
+    rights: "All rights reserved",
+    privacy: "Privacy Policy",
+    terms: "Terms of Use",
+    columns: [
+      {
+        title: "Hotel",
+        links: [
+          { title: "About us", url: "/about" },
+          { title: "Services", url: "/services" },
+          { title: "Gallery", url: "/gallery" },
+          { title: "Location", url: "/location" },
+        ],
+      },
+      {
+        title: "Contact",
+        links: [
+          { title: "Contact us", url: "/contact" },
+          { title: "WhatsApp", url: "/contact" },
+          { title: "Email", url: "/contact" },
+        ],
+      },
+    ],
+  },
+  es: {
+    rights: "Todos los derechos reservados",
+    privacy: "Politica de privacidad",
+    terms: "Terminos de uso",
+    columns: [
+      {
+        title: "Hotel",
+        links: [
+          { title: "Acerca de", url: "/about" },
+          { title: "Servicios", url: "/services" },
+          { title: "Galeria", url: "/gallery" },
+          { title: "Ubicacion", url: "/location" },
+        ],
+      },
+      {
+        title: "Contacto",
+        links: [
+          { title: "Contactanos", url: "/contact" },
+          { title: "WhatsApp", url: "/contact" },
+          { title: "Email", url: "/contact" },
+        ],
+      },
+    ],
+  },
+};
 
 async function Footer({ lang }: { lang: Locale }) {
+  const copy = footerCopy[lang];
+
   return (
-    <footer className="relative w-full">
-      <div className="w-full h-full bg-black  z-9 absolute"></div>
-      {/* <Image src="/wave2.svg" className="bottom-0 absolute"></Image>
-      <Image src="/wave.svg" className="bottom-0 absolute"></Image> */}
-      <div className="z-10 flex flex-col border-t border-gray-100 text-white backdrop-blur-xl bg-black/30">
-        <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-60 px-6 py-10">
-          <div className="flex flex-col justify-start items-start gap-6">
-            <Image
-              src="/logo-qorichaska_color.png"
-              alt="logo"
-              width={118}
-              height={18}
-              className="object-contain"
-            />
-            <p className="text-base text-gray-300">
-              Qorichaska 2023 <br />
-              All rights reserved &copy;
-            </p>
-          </div>
-          <div className="footer__links">
-            {lang === "en"
-              ? footerLinksEN.map((link) => (
-                  <div key={link.title} className="footer__link">
-                    <h3 className="font-bold">{link.title}</h3>
-                    {link.links.map((item) => (
-                      <Link
-                        key={item.title}
-                        href={item.url}
-                        className="text-gray-400"
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
-                ))
-              : footerLinksES.map((link) => (
-                  <div key={link.title} className="footer__link">
-                    <h3 className="font-bold">{link.title}</h3>
-                    {link.links.map((item) => (
-                      <Link
-                        key={item.title}
-                        href={item.url}
-                        className="text-gray-400"
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-          </div>
+    <footer className="bg-qori-inverse text-white">
+      <div className="qori-ribbon" />
+      <div className="qori-container grid gap-12 py-14 lg:grid-cols-[1.1fr_1fr]">
+        <div>
+          <Image
+            src="/logo-qorichaska_color.png"
+            alt="Hotel Qorichaska"
+            width={84}
+            height={84}
+            className="h-20 w-20 object-contain"
+          />
+          <h2 className="qori-serif mt-5 text-3xl font-bold">Hotel Qorichaska</h2>
+          <p className="mt-4 max-w-md text-sm leading-7 text-white/70">
+            C. Nueva Alta 458, Cusco 08000
+          </p>
         </div>
-        <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
-          <p>@2023 Qorichaska. All Rights Reserved</p>
-          <div className="footer__copyrights-link">
-            <Link href="/terms-policy" className="text-gray-400">
-              Privacy Policy
-            </Link>
-            <Link href="/" className="text-gray-400">
-              Terms of Use
-            </Link>
+        <div className="footer__links">
+          {copy.columns.map((column) => (
+            <div key={column.title} className="footer__link">
+              <h3 className="text-sm font-extrabold uppercase tracking-[0.05em] text-qori-accent">
+                {column.title}
+              </h3>
+              {column.links.map((item) => (
+                <Link
+                  key={`${column.title}-${item.title}`}
+                  href={`/${lang}${item.url}`}
+                  className="text-sm text-white/70 transition hover:text-white"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="border-t border-white/10">
+        <div className="qori-container flex flex-col gap-4 py-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            @2026 Qorichaska. {copy.rights}
+          </p>
+          <div className="flex gap-6">
+            <Link href={`/${lang}/terms-policy`}>{copy.privacy}</Link>
+            <Link href={`/${lang}/terms-policy`}>{copy.terms}</Link>
           </div>
         </div>
       </div>

@@ -1,46 +1,41 @@
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import Image from "next/image";
-import React from "react";
-import CustomButton from "./CustomButton";
-import Hover from "./animation/Hover";
-import Reveal from "./animation/Reveal";
+import Link from "next/link";
+
+const labels: Record<Locale, { eyebrow: string; action: string }> = {
+  en: { eyebrow: "Our story", action: "About us" },
+  es: { eyebrow: "Nuestra historia", action: "Acerca de" },
+};
 
 async function AboutCard({ lang }: { lang: Locale }) {
-  const { components } = await getDictionary(lang);
+  const { page } = await getDictionary(lang);
+
   return (
-    <div className="grid grid-flow-row lg:grid-flow-col bg-gradient-to-br from-white via-transparent to-slate-300 rounded-lg shadow-lg mx-10 mb-10 overflow-hidden">
-      <div className="flex flex-wrap">
-        <div className="w-1/2 flex flex-col justify-center px-5">
-          <h1 className="text-2xl font-extrabold underline underline-offset-8 mb-5">
-            Un hotel tradicional comprometido con su comodidad
-          </h1>
-          <p className="text-justify text-xl">
-            El Hostal Qorichaska, estamos comprometidos en brindarte el mejor
-            servicio, y asegurarnos que te lleves el mejor recuerdo de tu visita
-            al Cusco, además de ser un hostal moderno, nuestro principal
-            objetivo es la amabilidad que siempre nos caracteriza.
-          </p>
-          <div className="my-5 w-full flex justify-center">
-            <Reveal>
-              <CustomButton
-                title="Acerca De"
-                containerStyles="border-4 text-black border-qori-primary hover:border-qori-accent hover:text-qori-accent"
-              ></CustomButton>
-            </Reveal>
-          </div>
+    <section className="qori-section qori-pattern bg-qori-surface-low">
+      <div className="qori-container relative grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <p className="qori-label mb-4">{labels[lang].eyebrow}</p>
+          <h2 className="qori-heading max-w-xl">{page.about.art1.pre}</h2>
+          <p className="qori-subheading mt-6 max-w-2xl">{page.about.art1.first}</p>
+          <Link
+            href={`/${lang}/about`}
+            className="mt-8 inline-flex rounded-full border border-qori-primary px-6 py-3 text-sm font-extrabold uppercase tracking-[0.05em] text-qori-primary transition hover:bg-qori-primary hover:text-white"
+          >
+            {labels[lang].action}
+          </Link>
         </div>
-        <div className="w-1/2 flex flex-col items-end">
+        <div className="relative min-h-[440px] overflow-hidden qori-arch border border-qori-outline/20 bg-white shadow-[0_28px_70px_rgba(147,48,24,0.14)]">
           <Image
             src="/catedral1.png"
-            alt="mainimage"
-            className=""
-            width={540}
-            height={540}
+            alt={page.about.title}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

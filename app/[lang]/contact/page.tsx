@@ -1,67 +1,85 @@
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
-import Image from "next/image";
-import Reveal from "../components/animation/Reveal";
-import Hover from "../components/animation/Hover";
-import CustomButton from "../components/CustomButton";
+import ContactItem from "../components/ContactItem";
+import MapComponent from "../components/MapComponent";
+import PageHero from "../components/PageHero";
 
-export default async function Gallery({
-  params: { lang },
+const copy: Record<
+  Locale,
+  { eyebrow: string; title: string; description: string; mapTitle: string }
+> = {
+  en: {
+    eyebrow: "Contact",
+    title: "Tell us about your stay in Cusco",
+    description:
+      "Reach Hotel Qorichaska for reservations, arrival details, or help planning your visit.",
+    mapTitle: "Find us in the historic center",
+  },
+  es: {
+    eyebrow: "Contacto",
+    title: "Cuentanos sobre tu estadia en Cusco",
+    description:
+      "Comunicate con Hotel Qorichaska para reservas, detalles de llegada o ayuda con tu visita.",
+    mapTitle: "Encuentranos en el centro historico",
+  },
+};
+
+export default async function Contact({
+  params,
 }: {
-  params: { lang: Locale };
+  params: Promise<{ lang: string }>;
 }) {
-  const { page } = await getDictionary(lang);
+  const { lang } = await params;
+  const langLocale = lang as Locale;
+  const { components } = await getDictionary(langLocale);
 
   return (
     <div className="overflow-hidden">
-      {/* Hero Section */}
-      <div className="relative w-full h-screen/2">
-        <Image
-          src="/cusco-2.jpg"
-          alt="mainimage"
-          className="h-full w-full object-contain absolute"
-          width={1700}
-          height={1700}
-          style={{ objectFit: "cover" }}
-        />
-        <div className="w-full h-full bg-gradient-to-r from-black/50 left-0 absolute" />
-        <div className="flex">
-          <div className="flex flex-col py-36 padding-x w-full lg:w-1/2">
-            <Reveal>
-              <h1 className="hero__title text-white">
-                {page.location.subtitle}
-              </h1>
-            </Reveal>
-            <Reveal>
-              <p className="hero__subtitle text-gray-200">
-                {page.location.slogan}
-              </p>
-            </Reveal>
-            <div className="my-5">
-              <Hover>
-                <Reveal>
-                  <CustomButton
-                    title={page.home["button-text"]}
-                    containerStyles="bg-qori-primary text-white rounded-full hover:bg-qori-accent"
-                  ></CustomButton>
-                </Reveal>
-              </Hover>
-            </div>
+      <PageHero
+        lang={langLocale}
+        eyebrow={copy[langLocale].eyebrow}
+        title={copy[langLocale].title}
+        description={copy[langLocale].description}
+        image="/hotelview1.jpg"
+      />
+
+      <section className="qori-section qori-pattern bg-qori-surface-low">
+        <div className="qori-container relative grid gap-10 lg:grid-cols-3">
+          <ContactItem
+            tipo={components.contactItems.wsp.title}
+            subtext={components.contactItems.wsp.content}
+            cta={components.contactItems.wsp.action}
+            icon="wsp-icon.svg"
+            direction="#"
+          />
+          <ContactItem
+            tipo={components.contactItems.phone.title}
+            subtext={components.contactItems.phone.content}
+            cta={components.contactItems.phone.action}
+            icon="call-icon.svg"
+            direction="#"
+          />
+          <ContactItem
+            tipo={components.contactItems.email.title}
+            subtext={components.contactItems.email.content}
+            cta={components.contactItems.email.action}
+            icon="mail-icon.svg"
+            direction="mailto:"
+          />
+        </div>
+      </section>
+
+      <section className="qori-section bg-white">
+        <div className="qori-container">
+          <div className="mb-8 max-w-2xl">
+            <p className="qori-label mb-4">Hotel Qorichaska</p>
+            <h2 className="qori-heading">{copy[langLocale].mapTitle}</h2>
           </div>
-          <div className="h-full  items-center align-middle absolute right-0 hidden lg:block lg:scale-75">
-            <Reveal>
-              <Image
-                src="/hero.png"
-                alt="mainimage"
-                className=""
-                width={640}
-                height={640}
-                style={{ objectFit: "cover" }}
-              />
-            </Reveal>
+          <div className="overflow-hidden rounded-3xl border border-qori-outline/15 shadow-[0_24px_60px_rgba(147,48,24,0.08)]">
+            <MapComponent />
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

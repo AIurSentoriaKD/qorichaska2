@@ -3,11 +3,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 interface Props {
-  children: JSX.Element;
+  children: React.JSX.Element;
   width?: "fit-content" | "100%";
-  h_type?: string;
+  h_type?: "spring" | "tween";
 }
-function Hover({ children, width = "fit-content", h_type = "just" }: Props) {
+function Hover({ children, width = "fit-content", h_type = "spring" }: Props) {
   return (
     <motion.div
       whileHover={{ scale: 1.1 }}

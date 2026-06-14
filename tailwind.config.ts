@@ -11,12 +11,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        inter: ["Manrope", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
+        caslon: ["Libre Caslon Text", "Georgia", "serif"],
       },
       colors: {
-        "qori-primary": "#03a5a5",
-        "qori-secondary": "#a5a5fd",
-        "qori-accent": "#04d2d2",
+        "qori-primary": "#933018",
+        "qori-secondary": "#455f88",
+        "qori-accent": "#cca72f",
+        "qori-surface": "#fcf9f3",
+        "qori-surface-low": "#f6f3ed",
+        "qori-surface-high": "#e5e2dc",
+        "qori-muted": "#57423d",
+        "qori-outline": "#8a716c",
         "black-100": "#2B2C35",
         "primary-blue": {
           DEFAULT: "#2B59FF",

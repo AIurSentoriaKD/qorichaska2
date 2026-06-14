@@ -1,16 +1,24 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { Locale } from "@/i18n.config";
 import { GiHamburgerMenu } from "react-icons/gi";
+
+type Navigation = {
+  home: string;
+  about: string;
+  services: string;
+  gallery: string;
+  location: string;
+  contact: string;
+};
 
 export default function DropDownNavBar({
   lang,
   navigation,
 }: {
   lang: Locale;
-  navigation: any;
+  navigation: Navigation;
 }) {
   const linkStyle =
     "text-black relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer";

@@ -1,32 +1,45 @@
 import { Locale } from "@/i18n.config";
-import React from "react";
 import GalleryHome from "./GalleryHome";
-import { getDictionary } from "@/lib/dictionary";
+
+const copy: Record<Locale, { title: string; description: string }> = {
+  en: {
+    title: "Rooms for quiet nights in Cusco",
+    description:
+      "Single, double, triple, matrimonial, and family rooms prepared for rest after a day in the city.",
+  },
+  es: {
+    title: "Habitaciones para descansar en Cusco",
+    description:
+      "Habitaciones simples, dobles, triples, matrimoniales y familiares preparadas para descansar despues de recorrer la ciudad.",
+  },
+};
 
 async function RoomsMinimal({ lang }: { lang: Locale }) {
-  const { components } = await getDictionary(lang);
   const galleryImages = [
-    "single.jpg",
-    "double.jpg",
-    "triple.jpg",
-    "matrim.jpg",
-    "squad.jpg",
+    { image: "single.jpg", label: lang === "en" ? "Single room" : "Habitacion simple" },
+    { image: "double.jpg", label: lang === "en" ? "Double room" : "Habitacion doble" },
+    { image: "triple.jpg", label: lang === "en" ? "Triple room" : "Habitacion triple" },
+    { image: "matrim.jpg", label: lang === "en" ? "Matrimonial room" : "Habitacion matrimonial" },
+    { image: "squad.jpg", label: lang === "en" ? "Family room" : "Habitacion familiar" },
   ];
+
   return (
-    <div className="flex items-center justify-center min-h-96 bg-fixed bg-parallax bg-cover">
-      <div className="bg-black/50 w-full h-full ">
-        <div className="my-5">
-          <h1 className="text-white text-3xl text-center font-extrabold underline underline-offset-8"> Nuestras Habitaciones</h1>
+    <section className="qori-section bg-qori-inverse text-white">
+      <div className="qori-container">
+        <div className="mb-12 max-w-3xl">
+          <p className="qori-label mb-4 text-qori-accent">Qorichaska</p>
+          <h2 className="qori-heading text-white">{copy[lang].title}</h2>
+          <p className="mt-5 text-lg leading-8 text-white/75">
+            {copy[lang].description}
+          </p>
         </div>
-        <div className="flex flex-wrap flex-row justify-center">
-          {galleryImages.map((image) => {
-            return (
-              <GalleryHome image={image} key={image} plusclass={"col-auto"} />
-            );
-          })}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {galleryImages.map((item) => (
+            <GalleryHome image={item.image} label={item.label} key={item.image} />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

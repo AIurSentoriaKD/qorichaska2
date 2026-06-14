@@ -1,199 +1,145 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+
 import { Locale } from "@/i18n.config";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 import LangChanger from "./LangChanger";
-import { motion } from "framer-motion";
-import DropDownNavBar from "./DropDownNavBar";
-import ReservationOnNavBar from "./ReservationOnNavBar";
 
-function Navbar({ lang, navigation }: { lang: Locale; navigation: any }) {
-  const [navbar, setNavbar] = useState(false);
-  const [dropDown, setDropDown] = useState(false);
-  const [reservaDrop, setReservaDrop] = useState(false);
-  const changeBackground = () => {
-    //    console.log(window.scrollY);
-    if (window.scrollY >= 80) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-    if (window.scrollY >= 200) {
-      setReservaDrop(true);
-    } else {
-      setReservaDrop(false);
-    }
-  };
+type Navigation = {
+  home: string;
+  about: string;
+  services: string;
+  gallery: string;
+  location: string;
+  contact: string;
+};
 
+const bookingLabel: Record<Locale, string> = {
+  en: "Book now",
+  es: "Reservar",
+};
 
-  const deployDropdown = () => {
-    setDropDown(!dropDown);
-    console.log("action drop");
-  };
+function Navbar({ lang, navigation }: { lang: Locale; navigation: Navigation }) {
+  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground);
+    const onScroll = () => setIsScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const linkStyle =
-    "relative after:bg-white after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer";
+
+  const links = [
+    { href: `/${lang}`, label: navigation.home },
+    { href: `/${lang}/services`, label: navigation.services },
+    { href: `/${lang}/gallery`, label: navigation.gallery },
+    { href: `/${lang}/location`, label: navigation.location },
+    { href: `/${lang}/contact`, label: navigation.contact },
+    { href: `/${lang}/about`, label: navigation.about },
+  ];
+
+  const navClass = isScrolled
+    ? "border-qori-outline/20 bg-[#fcf9f3]/[0.92] shadow-[0_16px_40px_rgba(49,49,45,0.08)] backdrop-blur-xl"
+    : "border-transparent bg-[#fcf9f3]/80 backdrop-blur-md";
+
   return (
     <header
-      className={
-        navbar
-          ? `w-full min-h-20 sticky top-0 z-10 transition-all duration-100 backdrop-blur-md  border-b-2 border-white ${
-              dropDown ? `bg-black/80` : `bg-black/30`
-            }`
-          : `w-full min-h-20 sticky top-0 z-10 bg-black`
-      }
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ${navClass}`}
     >
-      {/* NORMAL OPEN NAVBAR */}
-      <nav className="hidden md:flex max-w-[1440px] mx-auto justify-between items-center sm:px-16 px-6 py-4 text-white">
-        <Link href="/" className="flex justify-center items-center">
+      <nav className="qori-container flex min-h-20 items-center justify-between gap-6 py-3">
+        <Link
+          href={`/${lang}`}
+          className="flex min-w-0 items-center gap-3"
+          onClick={() => setIsOpen(false)}
+        >
           <Image
             src="/logo-qorichaska_color.png"
-            alt="qorilogo"
-            width={40}
-            height={40}
-            className="object-contain"
+            alt="Hotel Qorichaska"
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain"
+            priority
           />
-          <p className="font-extrabold mx-5 text-2xl">Qorichaska Hotel</p>
+          <span className="qori-serif truncate text-2xl font-bold text-qori-primary">
+            Hotel Qorichaska
+          </span>
         </Link>
-        {!reservaDrop ? (
-          <>
-            <div className="md:flex hidden gap-5">
+
+        <div className="hidden items-center gap-7 lg:flex">
+          {links.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== `/${lang}` && pathname?.startsWith(link.href));
+
+            return (
               <Link
-                href={`/${lang}`}
-                className={linkStyle}
-                onClick={(dropDown) => setDropDown(!dropDown)}
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-extrabold tracking-[0.05em] transition-colors ${
+                  isActive
+                    ? "text-qori-primary"
+                    : "text-qori-muted hover:text-qori-primary"
+                }`}
               >
-                {navigation.home}
+                {link.label}
               </Link>
+            );
+          })}
+        </div>
+
+        <div className="hidden items-center gap-3 lg:flex">
+          <LangChanger initialLang={lang} />
+          <Link
+            href={`/${lang}/contact`}
+            className="rounded-full bg-qori-primary px-6 py-3 text-sm font-extrabold uppercase tracking-[0.05em] text-white transition hover:bg-[#84250e]"
+          >
+            {bookingLabel[lang]}
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+          className="grid h-11 w-11 place-items-center rounded-full border border-qori-outline/30 text-qori-primary lg:hidden"
+          onClick={() => setIsOpen((current) => !current)}
+        >
+          {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+        </button>
+      </nav>
+
+      {isOpen ? (
+        <div className="border-t border-qori-outline/20 bg-[#fcf9f3] lg:hidden">
+          <div className="qori-container flex flex-col gap-4 py-6">
+            {links.map((link) => (
               <Link
-                href={`/${lang}/services`}
-                className={linkStyle}
-                onClick={(dropDown) => setDropDown(!dropDown)}
+                key={link.href}
+                href={link.href}
+                className="text-base font-bold text-qori-muted"
+                onClick={() => setIsOpen(false)}
               >
-                {navigation.services}
+                {link.label}
               </Link>
-              <Link
-                href={`/${lang}/gallery`}
-                className={linkStyle}
-                onClick={(dropDown) => setDropDown(!dropDown)}
-              >
-                {navigation.gallery}
-              </Link>
-              <Link
-                href={`/${lang}/location`}
-                className={linkStyle}
-                onClick={(dropDown) => setDropDown(!dropDown)}
-              >
-                {navigation.location}
-              </Link>
+            ))}
+            <div className="flex items-center justify-between gap-4 pt-3">
+              <LangChanger initialLang={lang} />
               <Link
                 href={`/${lang}/contact`}
-                className={linkStyle}
-                onClick={(dropDown) => setDropDown(!dropDown)}
+                className="rounded-full bg-qori-primary px-5 py-3 text-sm font-extrabold uppercase tracking-[0.05em] text-white"
+                onClick={() => setIsOpen(false)}
               >
-                {navigation.contact}
-              </Link>
-              <Link
-                href={`/${lang}/about`}
-                className={linkStyle}
-                onClick={(dropDown) => setDropDown(!dropDown)}
-              >
-                {navigation.about}
+                {bookingLabel[lang]}
               </Link>
             </div>
-            <LangChanger initialLang={lang} />
-          </>
-        ) : (
-          <>
-            <ReservationOnNavBar lang={lang} navigation={navigation} />
-            <DropDownNavBar lang={lang} navigation={navigation} />
-          </>
-        )}
-      </nav>
-      {/* MOBILE NAVBAR */}
-      <nav className="flex sm:hidden relative top-0 text-white justify-between mx-auto px-6 py-4">
-        <button className="mx-3" onClick={deployDropdown}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        </button>
-        <Link href="/" className="flex justify-center items-center">
-          <Image
-            src="/logo-qorichaska_color.png"
-            alt="qorilogo"
-            width={40}
-            height={40}
-            className="object-contain"
-          />
-          <p className="font-extrabold mx-5 text-2xl">Qorichaska Hotel</p>
-        </Link>
-      </nav>
-      {dropDown ? (
-        <div className="bg-black/80 h-screen w-screen absolute top-20">
-          <div className="text-white flex flex-col gap-5 w-full justify-center items-center text-xl my-20">
-            <Link
-              href={`/${lang}`}
-              className={linkStyle}
-              onClick={(dropDown) => setDropDown(!dropDown)}
-            >
-              {navigation.home}
-            </Link>
-            <Link
-              href={`/${lang}/services`}
-              className={linkStyle}
-              onClick={(dropDown) => setDropDown(!dropDown)}
-            >
-              {navigation.services}
-            </Link>
-            <Link
-              href={`/${lang}/gallery`}
-              className={linkStyle}
-              onClick={(dropDown) => setDropDown(!dropDown)}
-            >
-              {navigation.gallery}
-            </Link>
-            <Link
-              href={`/${lang}/location`}
-              className={linkStyle}
-              onClick={(dropDown) => setDropDown(!dropDown)}
-            >
-              {navigation.location}
-            </Link>
-            <Link
-              href={`/${lang}/contact`}
-              className={linkStyle}
-              onClick={(dropDown) => setDropDown(!dropDown)}
-            >
-              {navigation.contact}
-            </Link>
-            <Link
-              href={`/${lang}/about`}
-              className={linkStyle}
-              onClick={(dropDown) => setDropDown(!dropDown)}
-            >
-              {navigation.about}
-            </Link>
-            <LangChanger initialLang={lang} />
           </div>
         </div>
-      ) : (
-        <></>
-      )}
+      ) : null}
     </header>
   );
 }
+
 export default Navbar;

@@ -1,7 +1,5 @@
-import React from "react";
-import CustomButton from "./CustomButton";
 import Image from "next/image";
-import Hover from "./animation/Hover";
+import Link from "next/link";
 
 function ImageCard({
   image,
@@ -9,40 +7,42 @@ function ImageCard({
   subtitle,
   content,
   action,
+  href,
 }: {
   image: string;
   title: string;
   subtitle: string;
   content: string;
   action: string;
+  href?: string;
 }) {
   return (
-    <div className="mb-3 sm:mx-0 mx-auto group rounded-xl overflow-hidden border-black border-2 relative w-[340px] h-[480px]">
-      {/* <div className="z-3 absolute border-8 border-white rounded-lg w-full h-full bg-white"></div> */}
-      <Image
-        className="rounded-xl w-auto h-[600px] object-cover"
-        src={`/${image}`}
-        alt="imagecardimage"
-        width={400}
-        height={600}
-      ></Image>
-      <div className="w-full h-full top-0  absolute  backdrop-blur-md rounded-xl bg-black/30 text-white p-12 flex flex-col justify-center -right-full group-hover:right-0 transition-all duration-200">
-        <h1 className="text-xl font-extrabold uppercase">{title}</h1>
-        <p className="font-extralight capitalize text-sm">{subtitle}</p>
-        <p className="text-lg my-5 text-justify">{content}</p>
-        <div className="flex justify-center">
-          <Hover>
-            <CustomButton
-              title={action}
-              containerStyles="bg-qori-primary text-white rounded-lg mt-10 w-[150px]"
-            ></CustomButton>
-          </Hover>
-        </div>
+    <article className="qori-card group flex h-full flex-col">
+      <div className="relative h-64 overflow-hidden">
+        <Image
+          className="object-cover transition duration-700 group-hover:scale-105"
+          src={`/${image}`}
+          alt={title}
+          fill
+          sizes="(min-width: 1024px) 33vw, 100vw"
+        />
       </div>
-    </div>
-    // <div className="mb-3 group rounded-xl overflow-hidden border-black border-8 bg-black relative w-auto sm:w-full md:w-[400px] md:h-[600px] h-1/4">
-    //   <Image className="rounded-xl w-auto h-[600px] object-cover" src={`/${image}`} alt="imagecardimage" width={400} height={600}></Image>
-    // </div>
+      <div className="flex flex-1 flex-col p-7">
+        <p className="qori-label mb-3 text-qori-blue">{subtitle}</p>
+        <h3 className="qori-serif text-2xl font-bold leading-tight text-qori-ink">
+          {title}
+        </h3>
+        <p className="mt-4 flex-1 text-sm leading-7 text-qori-muted">{content}</p>
+        {href ? (
+          <Link
+            href={href}
+            className="mt-7 inline-flex text-sm font-extrabold uppercase tracking-[0.05em] text-qori-primary"
+          >
+            {action}
+          </Link>
+        ) : null}
+      </div>
+    </article>
   );
 }
 

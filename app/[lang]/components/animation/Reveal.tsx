@@ -3,7 +3,7 @@ import { motion, useInView, useAnimation } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
 interface Props {
-  children: JSX.Element;
+  children: React.JSX.Element;
   width?: "fit-content" | "100%";
   delay?: number;
   direction?: "from-bottom" | "from-left";
@@ -15,14 +15,14 @@ function Reveal({
   delay = 0.25,
   direction = "from-bottom",
 }: Props) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
   let variants = {};
   if (direction == "from-bottom") {

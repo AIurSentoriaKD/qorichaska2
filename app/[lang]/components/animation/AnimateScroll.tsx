@@ -14,16 +14,16 @@ type Options = {
 
 const useElementOnScreen = (
   options: Options
-): [React.RefObject<HTMLDivElement>, boolean] => {
+): [React.RefObject<HTMLDivElement | null>, boolean] => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const makeAppear = (entries: any) => {
+  const makeAppear = (entries: IntersectionObserverEntry[]) => {
     const [entry] = entries;
     if (entry.isIntersecting) setIsVisible(true);
   };
 
-  const makeAppearRepeating = (entries: any) => {
+  const makeAppearRepeating = (entries: IntersectionObserverEntry[]) => {
     const [entry] = entries;
     setIsVisible(entry.isIntersecting);
   };
