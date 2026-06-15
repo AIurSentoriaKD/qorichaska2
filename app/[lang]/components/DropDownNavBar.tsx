@@ -24,7 +24,7 @@ export default function DropDownNavBar({
   const [isOpen, setIsOpen] = useState(false);
 
   const linkStyle =
-    "text-black relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer";
+    "text-qori-muted relative after:bg-qori-primary after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer hover:text-qori-primary";
 
   return (
     <div className="relative inline-block text-left">

@@ -15,8 +15,8 @@ function ContactItem({
   direction: string;
 }) {
   return (
-    <article className="qori-card relative overflow-visible p-8 pt-12">
-      <div className="absolute -top-9 left-8 grid h-16 w-16 place-items-center rounded-2xl border border-qori-outline/20 bg-white shadow-[0_14px_35px_rgba(147,48,24,0.14)]">
+    <article className="qori-card relative overflow-visible p-7 pt-11">
+      <div className="absolute -top-8 left-7 grid h-14 w-14 place-items-center rounded-xl border border-qori-outline-soft/70 bg-qori-surface-low shadow-[0_12px_30px_rgba(147,48,24,0.1)]">
         <Image
           src={`/${icon}`}
           alt=""
@@ -31,7 +31,7 @@ function ContactItem({
         <Hover h_type="spring">
           <a
             href={direction}
-            className="inline-flex text-sm font-extrabold uppercase tracking-[0.05em] text-qori-primary"
+            className="inline-flex text-[0.72rem] font-extrabold uppercase tracking-[0.05em] text-qori-primary"
           >
             {cta}
           </a>

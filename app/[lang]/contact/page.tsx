@@ -69,13 +69,13 @@ export default async function Contact({
         </div>
       </section>
 
-      <section className="qori-section bg-white">
+      <section className="qori-section bg-qori-surface">
         <div className="qori-container">
           <div className="mb-8 max-w-2xl">
             <p className="qori-label mb-4">Hotel Qorichaska</p>
             <h2 className="qori-heading">{copy[langLocale].mapTitle}</h2>
           </div>
-          <div className="overflow-hidden rounded-3xl border border-qori-outline/15 shadow-[0_24px_60px_rgba(147,48,24,0.08)]">
+          <div className="overflow-hidden rounded-xl border border-qori-outline-soft/70 shadow-[0_16px_45px_rgba(147,48,24,0.05)]">
             <MapComponent />
           </div>
         </div>

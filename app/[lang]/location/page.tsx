@@ -47,14 +47,14 @@ export default async function Location({
         image="/cusco-2.jpg"
       />
 
-      <section className="qori-section bg-white">
+      <section className="qori-section bg-qori-surface">
         <div className="qori-container grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <article className="qori-card p-8 md:p-12">
             <p className="qori-label mb-4">{copy[langLocale].mapEyebrow}</p>
             <h2 className="qori-heading">{copy[langLocale].mapTitle}</h2>
             <p className="qori-subheading mt-6">{page.location.description}</p>
           </article>
-          <div className="overflow-hidden rounded-3xl border border-qori-outline/15 shadow-[0_24px_60px_rgba(147,48,24,0.08)]">
+          <div className="overflow-hidden rounded-xl border border-qori-outline-soft/70 shadow-[0_16px_45px_rgba(147,48,24,0.05)]">
             <MapComponent />
           </div>
         </div>

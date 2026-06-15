@@ -65,7 +65,7 @@ async function Footer({ lang }: { lang: Locale }) {
   const copy = footerCopy[lang];
 
   return (
-    <footer className="bg-qori-inverse text-white">
+    <footer className="rounded-t-[2rem] border-t border-qori-accent bg-qori-surface-high text-qori-ink">
       <div className="qori-ribbon" />
       <div className="qori-container grid gap-12 py-14 lg:grid-cols-[1.1fr_1fr]">
         <div>
@@ -74,10 +74,10 @@ async function Footer({ lang }: { lang: Locale }) {
             alt="Hotel Qorichaska"
             width={84}
             height={84}
-            className="h-20 w-20 object-contain"
+            className="h-16 w-16 object-contain"
           />
-          <h2 className="qori-serif mt-5 text-3xl font-bold">Hotel Qorichaska</h2>
-          <p className="mt-4 max-w-md text-sm leading-7 text-white/70">
+          <h2 className="qori-serif mt-5 text-2xl font-bold text-qori-primary">Hotel Qorichaska</h2>
+          <p className="mt-4 max-w-md text-sm leading-7 text-qori-muted">
             C. Nueva Alta 458, Cusco 08000
           </p>
         </div>
@@ -91,7 +91,7 @@ async function Footer({ lang }: { lang: Locale }) {
                 <Link
                   key={`${column.title}-${item.title}`}
                   href={`/${lang}${item.url}`}
-                  className="text-sm text-white/70 transition hover:text-white"
+                  className="text-sm text-qori-muted transition hover:text-qori-primary"
                 >
                   {item.title}
                 </Link>
@@ -100,8 +100,8 @@ async function Footer({ lang }: { lang: Locale }) {
           ))}
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="qori-container flex flex-col gap-4 py-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-qori-outline-soft/60">
+        <div className="qori-container flex flex-col gap-4 py-6 text-sm text-qori-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             @2026 Qorichaska. {copy.rights}
           </p>

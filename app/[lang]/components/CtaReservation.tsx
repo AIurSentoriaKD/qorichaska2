@@ -8,13 +8,13 @@ import { getDictionary } from "@/lib/dictionary";
 async function CtaReservation({ lang }: { lang: Locale }) {
   const { components } = await getDictionary(lang);
   return (
-    <div className="bg-gradient-to-r from-teal-400 to-teal-500 grid grid-flow-row lg:grid-flow-col">
+    <div className="grid grid-flow-row bg-qori-surface-high lg:grid-flow-col">
       <div className="h-full flex flex-col align-middle justify-center">
         <div className=" flex justify-center align-middle items-center flex-wrap m-3 ">
           <div className="p-3">
             <p className="">{components["cta-reservation"].mail}</p>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full rounded border border-qori-outline-soft bg-white px-3 py-2 leading-tight text-qori-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-qori-accent"
               id="username"
               type="mail"
               placeholder={components["cta-reservation"].mail}
@@ -23,7 +23,7 @@ async function CtaReservation({ lang }: { lang: Locale }) {
           <div className="p-3">
             <p>{components["cta-reservation"].name}</p>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full rounded border border-qori-outline-soft bg-white px-3 py-2 leading-tight text-qori-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-qori-accent"
               id="username"
               type="text"
               placeholder={components["cta-reservation"].name}
@@ -32,7 +32,7 @@ async function CtaReservation({ lang }: { lang: Locale }) {
           <div className="p-3">
             <p>{components["cta-reservation"]["last-name"]}</p>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full rounded border border-qori-outline-soft bg-white px-3 py-2 leading-tight text-qori-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-qori-accent"
               id="username"
               type="text"
               placeholder={components["cta-reservation"]["last-name"]}
@@ -42,7 +42,7 @@ async function CtaReservation({ lang }: { lang: Locale }) {
         <div className="p-3 w-full flex justify-center">
           <CustomButton
             title={components["cta-reservation"].action}
-            containerStyles="bg-qori-primary rounded-md text-white shadow-lg"
+            containerStyles="bg-qori-primary text-white shadow-lg hover:bg-[#84250e]"
           />
         </div>
       </div>

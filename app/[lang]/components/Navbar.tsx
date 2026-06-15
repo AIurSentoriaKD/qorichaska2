@@ -1,7 +1,6 @@
 "use client";
 
 import { Locale } from "@/i18n.config";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -44,33 +43,23 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: Navigation }) 
   ];
 
   const navClass = isScrolled
-    ? "border-qori-outline/20 bg-[#fcf9f3]/[0.92] shadow-[0_16px_40px_rgba(49,49,45,0.08)] backdrop-blur-xl"
-    : "border-transparent bg-[#fcf9f3]/80 backdrop-blur-md";
+    ? "border-qori-outline-soft/70 bg-[#fcf9f3]/[0.94] shadow-[0_12px_28px_rgba(49,49,45,0.06)] backdrop-blur-xl"
+    : "border-qori-outline-soft/45 bg-[#fcf9f3]/90 backdrop-blur-md";
 
   return (
     <header
       className={`sticky top-0 z-50 border-b transition-all duration-300 ${navClass}`}
     >
-      <nav className="qori-container flex min-h-20 items-center justify-between gap-6 py-3">
+      <nav className="qori-container flex min-h-16 items-center justify-between gap-6 py-2">
         <Link
           href={`/${lang}`}
-          className="flex min-w-0 items-center gap-3"
+          className="qori-serif min-w-0 truncate text-[1.35rem] font-bold leading-none text-qori-primary"
           onClick={() => setIsOpen(false)}
         >
-          <Image
-            src="/logo-qorichaska_color.png"
-            alt="Hotel Qorichaska"
-            width={48}
-            height={48}
-            className="h-12 w-12 object-contain"
-            priority
-          />
-          <span className="qori-serif truncate text-2xl font-bold text-qori-primary">
-            Hotel Qorichaska
-          </span>
+          Hotel Qorichaska
         </Link>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {links.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -80,10 +69,10 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: Navigation }) 
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-extrabold tracking-[0.05em] transition-colors ${
+                className={`border-b-2 pb-1 text-[0.72rem] font-extrabold tracking-[0.05em] transition-colors ${
                   isActive
-                    ? "text-qori-primary"
-                    : "text-qori-muted hover:text-qori-primary"
+                    ? "border-qori-primary text-qori-primary"
+                    : "border-transparent text-qori-muted hover:text-qori-primary"
                 }`}
               >
                 {link.label}
@@ -96,7 +85,7 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: Navigation }) 
           <LangChanger initialLang={lang} />
           <Link
             href={`/${lang}/contact`}
-            className="rounded-full bg-qori-primary px-6 py-3 text-sm font-extrabold uppercase tracking-[0.05em] text-white transition hover:bg-[#84250e]"
+            className="qori-button-primary min-h-0 px-5 py-2 text-[0.72rem]"
           >
             {bookingLabel[lang]}
           </Link>
@@ -105,7 +94,7 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: Navigation }) 
         <button
           type="button"
           aria-label={isOpen ? "Close navigation" : "Open navigation"}
-          className="grid h-11 w-11 place-items-center rounded-full border border-qori-outline/30 text-qori-primary lg:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full border border-qori-outline-soft bg-white text-qori-primary lg:hidden"
           onClick={() => setIsOpen((current) => !current)}
         >
           {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
@@ -113,13 +102,13 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: Navigation }) 
       </nav>
 
       {isOpen ? (
-        <div className="border-t border-qori-outline/20 bg-[#fcf9f3] lg:hidden">
+        <div className="border-t border-qori-outline-soft/70 bg-[#fcf9f3] lg:hidden">
           <div className="qori-container flex flex-col gap-4 py-6">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-base font-bold text-qori-muted"
+                className="text-sm font-bold uppercase tracking-[0.05em] text-qori-muted"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -129,7 +118,7 @@ function Navbar({ lang, navigation }: { lang: Locale; navigation: Navigation }) 
               <LangChanger initialLang={lang} />
               <Link
                 href={`/${lang}/contact`}
-                className="rounded-full bg-qori-primary px-5 py-3 text-sm font-extrabold uppercase tracking-[0.05em] text-white"
+                className="qori-button-primary min-h-0 px-5 py-3"
                 onClick={() => setIsOpen(false)}
               >
                 {bookingLabel[lang]}

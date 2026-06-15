@@ -12,7 +12,7 @@
   --qori-muted: #57423d;
   --qori-primary: #933018;
   --qori-primary-soft: #b3472d;
-  --qori-blue: #455f88;
+  --qori-secondary: #455f88;
   --qori-gold: #cca72f;
   --qori-outline: #8a716c;
   --qori-outline-soft: #dec0b9;
@@ -29,28 +29,10 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(204, 167, 47, 0.13), transparent 34rem),
-    linear-gradient(180deg, var(--qori-surface) 0%, #e8dcc7 100%);
+  background: var(--qori-surface);
   color: var(--qori-ink);
   font-family: "Manrope", system-ui, sans-serif;
   min-height: 100vh;
-}
-
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  content: "";
-  opacity: 0.18;
-  background-image:
-    linear-gradient(45deg, rgba(147, 48, 24, 0.08) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(147, 48, 24, 0.08) 25%, transparent 25%);
-  background-position:
-    0 0,
-    12px 12px;
-  background-size: 24px 24px;
 }
 
 a {
@@ -71,7 +53,7 @@ textarea {
 }
 
 .qori-section {
-  padding-block: clamp(72px, 9vw, 128px);
+  padding-block: clamp(64px, 8vw, 112px);
 }
 
 .qori-serif {
@@ -80,7 +62,7 @@ textarea {
 
 .qori-label {
   color: var(--qori-primary);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -88,7 +70,7 @@ textarea {
 
 .qori-heading {
   font-family: "Libre Caslon Text", Georgia, serif;
-  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-size: clamp(2.25rem, 4.8vw, 4rem);
   font-weight: 700;
   line-height: 1.08;
 }
@@ -101,14 +83,14 @@ textarea {
 
 .qori-card {
   overflow: hidden;
-  border: 1px solid rgba(138, 113, 108, 0.2);
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 24px 60px rgba(147, 48, 24, 0.08);
+  border: 1px solid rgba(222, 192, 185, 0.58);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 16px 45px rgba(147, 48, 24, 0.05);
 }
 
 .qori-arch {
-  border-radius: 999px 999px 1.5rem 1.5rem;
+  border-radius: 999px 999px 0.75rem 0.75rem;
 }
 
 .qori-ribbon {
@@ -128,11 +110,41 @@ textarea {
   inset: 0;
   pointer-events: none;
   content: "";
-  opacity: 0.08;
+  opacity: 0.045;
   background-image:
     linear-gradient(135deg, var(--qori-primary) 10%, transparent 10% 50%, var(--qori-primary) 50% 60%, transparent 60%),
-    linear-gradient(45deg, var(--qori-blue) 10%, transparent 10% 50%, var(--qori-blue) 50% 60%, transparent 60%);
+    linear-gradient(45deg, var(--qori-secondary) 10%, transparent 10% 50%, var(--qori-secondary) 50% 60%, transparent 60%);
   background-size: 38px 38px;
+}
+
+.qori-soft-section {
+  background: var(--qori-surface-high);
+}
+
+.qori-button-primary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--qori-primary);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.78rem 1.35rem;
+  text-transform: uppercase;
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.qori-button-primary:hover {
+  background: #84250e;
+  box-shadow: 0 14px 28px rgba(147, 48, 24, 0.18);
+  transform: translateY(-1px);
 }
 
 .custom-btn {
@@ -159,9 +171,9 @@ textarea {
 
 .hero__title {
   font-family: "Libre Caslon Text", Georgia, serif;
-  font-size: clamp(2.75rem, 7vw, 5.25rem);
+  font-size: clamp(2.7rem, 7vw, 4.9rem);
   font-weight: 700;
-  line-height: 0.98;
+  line-height: 0.96;
 }
 
 .hero__subtitle {

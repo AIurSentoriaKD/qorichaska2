@@ -24,12 +24,11 @@ async function RoomsMinimal({ lang }: { lang: Locale }) {
   ];
 
   return (
-    <section className="qori-section bg-qori-inverse text-white">
+    <section className="qori-section bg-qori-surface">
       <div className="qori-container">
         <div className="mb-12 max-w-3xl">
-          <p className="qori-label mb-4 text-qori-accent">Qorichaska</p>
-          <h2 className="qori-heading text-white">{copy[lang].title}</h2>
-          <p className="mt-5 text-lg leading-8 text-white/75">
+          <h2 className="qori-heading text-qori-ink">{copy[lang].title}</h2>
+          <p className="mt-5 text-lg leading-8 text-qori-muted">
             {copy[lang].description}
           </p>
         </div>

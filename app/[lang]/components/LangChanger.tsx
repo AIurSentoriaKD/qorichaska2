@@ -32,11 +32,11 @@ function LangChanger({ initialLang }: LangChangerProps) {
   }, []);
 
   return (
-    <div className="w-24 text-qori-ink relative" ref={dropdownRef}>
+    <div className="relative w-24 text-qori-ink" ref={dropdownRef}>
       <div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative w-full cursor-pointer rounded-full border border-qori-outline/30 bg-white/80 py-2 pl-4 pr-9 text-left text-sm font-bold uppercase tracking-[0.05em] text-qori-primary shadow-sm focus:outline-none focus:ring-2 focus:ring-qori-accent"
+          className="relative w-full cursor-pointer rounded-full border border-qori-outline-soft/80 bg-white/80 py-2 pl-4 pr-9 text-left text-sm font-bold uppercase tracking-[0.05em] text-qori-primary shadow-sm focus:outline-none focus:ring-2 focus:ring-qori-accent"
         >
           <span className="block truncate">{selectedLang}</span>
           <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
@@ -46,7 +46,7 @@ function LangChanger({ initialLang }: LangChangerProps) {
       </div>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 max-h-60 w-full overflow-auto rounded-2xl border border-qori-outline/20 bg-white py-2 text-sm shadow-xl focus:outline-none z-30 transition-all duration-100 opacity-100">
+        <div className="absolute right-0 z-30 mt-2 max-h-60 w-full overflow-auto rounded-xl border border-qori-outline-soft/80 bg-white py-2 text-sm shadow-xl opacity-100 transition-all duration-100 focus:outline-none">
           {i18n.locales.map((locale) => {
             const isSelected = selectedLang === locale;
             return (

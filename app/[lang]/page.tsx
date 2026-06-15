@@ -9,7 +9,7 @@ import RoomsMinimal from "./components/RoomsMinimal";
 import { AiFillLock, AiOutlineWifi } from "react-icons/ai";
 import { BsDroplet } from "react-icons/bs";
 import { FaBed } from "react-icons/fa";
-import { FiCalendar, FiSearch, FiUsers } from "react-icons/fi";
+import { FiArrowRight, FiCalendar, FiMapPin, FiSearch, FiUsers } from "react-icons/fi";
 import { LiaLanguageSolid } from "react-icons/lia";
 import { PiTelevisionSimpleBold } from "react-icons/pi";
 import { RiLuggageDepositLine, RiTimer2Line } from "react-icons/ri";
@@ -27,6 +27,7 @@ const homeCopy: Record<
     moreServices: string;
     contactTitle: string;
     cardAction: string;
+    localStrip: string[];
   }
 > = {
   en: {
@@ -41,6 +42,7 @@ const homeCopy: Record<
     moreServices: "More services",
     contactTitle: "Plan your stay",
     cardAction: "Learn more",
+    localStrip: ["Cusco historic center", "Machu Picchu access", "Andean hospitality", "Family rooms"],
   },
   es: {
     eyebrow: "Hotel Qorichaska",
@@ -54,6 +56,7 @@ const homeCopy: Record<
     moreServices: "Mas servicios",
     contactTitle: "Planifica tu estadia",
     cardAction: "Ver mas",
+    localStrip: ["Centro historico de Cusco", "Acceso a Machu Picchu", "Hospitalidad andina", "Habitaciones familiares"],
   },
 };
 
@@ -80,7 +83,7 @@ export default async function Home({
 
   return (
     <div className="overflow-hidden">
-      <section className="relative min-h-[calc(100vh-80px)] overflow-hidden">
+      <section className="relative min-h-[calc(100vh-64px)] overflow-hidden">
         <Image
           src="/cusco-2.jpg"
           alt={page.home.slogan}
@@ -89,12 +92,11 @@ export default async function Home({
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#fcf9f3] via-[#fcf9f3]/86 to-[#fcf9f3]/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(204,167,47,0.25),transparent_26rem)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fcf9f3]/96 via-[#fcf9f3]/62 to-[#fcf9f3]/8" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#fcf9f3] to-transparent" />
 
-        <div className="qori-container relative z-10 grid min-h-[calc(100vh-80px)] items-center gap-10 py-16 lg:grid-cols-[1fr_0.82fr]">
-          <div className="max-w-3xl">
-            <p className="qori-label mb-5">{copy.eyebrow}</p>
+        <div className="qori-container relative z-10 flex min-h-[calc(100vh-64px)] items-center py-12">
+          <div className="max-w-2xl">
             <h1 className="hero__title text-qori-ink">
               {page.home.slogan}
             </h1>
@@ -102,38 +104,38 @@ export default async function Home({
               {page.home.description}
             </p>
 
-            <form className="mt-10 grid gap-3 rounded-[1.5rem] border border-qori-outline/20 bg-white/[0.92] p-3 shadow-[0_28px_70px_rgba(147,48,24,0.16)] md:grid-cols-[1fr_1fr_1fr_auto]">
-              <label className="flex items-center gap-3 rounded-2xl border border-qori-outline/15 px-4 py-3">
+            <form className="mt-9 grid max-w-3xl gap-0 overflow-hidden rounded-[1.75rem] border border-qori-outline-soft/80 bg-white shadow-[0_22px_55px_rgba(49,49,45,0.16)] md:grid-cols-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.82fr)_112px] lg:rounded-full">
+              <label className="flex min-w-0 items-center gap-3 border-b border-qori-outline-soft/70 px-5 py-4 md:border-b md:border-r lg:border-b-0">
                 <FiCalendar className="text-qori-accent" size={22} />
-                <span className="flex flex-1 flex-col">
-                  <span className="text-xs font-extrabold uppercase tracking-[0.05em] text-qori-outline">
+                <span className="flex min-w-0 flex-1 flex-col">
+                  <span className="text-[0.68rem] font-extrabold uppercase tracking-[0.05em] text-qori-outline">
                     {copy.checkIn}
                   </span>
                   <input
                     type="date"
-                    className="mt-1 w-full bg-transparent text-sm font-semibold text-qori-ink outline-none"
+                    className="mt-1 w-full min-w-0 bg-transparent text-sm font-semibold text-qori-ink outline-none"
                   />
                 </span>
               </label>
-              <label className="flex items-center gap-3 rounded-2xl border border-qori-outline/15 px-4 py-3">
+              <label className="flex min-w-0 items-center gap-3 border-b border-qori-outline-soft/70 px-5 py-4 md:border-b md:border-r lg:border-b-0">
                 <FiCalendar className="text-qori-accent" size={22} />
-                <span className="flex flex-1 flex-col">
-                  <span className="text-xs font-extrabold uppercase tracking-[0.05em] text-qori-outline">
+                <span className="flex min-w-0 flex-1 flex-col">
+                  <span className="text-[0.68rem] font-extrabold uppercase tracking-[0.05em] text-qori-outline">
                     {copy.checkOut}
                   </span>
                   <input
                     type="date"
-                    className="mt-1 w-full bg-transparent text-sm font-semibold text-qori-ink outline-none"
+                    className="mt-1 w-full min-w-0 bg-transparent text-sm font-semibold text-qori-ink outline-none"
                   />
                 </span>
               </label>
-              <label className="flex items-center gap-3 rounded-2xl border border-qori-outline/15 px-4 py-3">
+              <label className="flex min-w-0 items-center gap-3 border-b border-qori-outline-soft/70 px-5 py-4 md:border-b lg:border-b-0 lg:border-r">
                 <FiUsers className="text-qori-accent" size={22} />
-                <span className="flex flex-1 flex-col">
-                  <span className="text-xs font-extrabold uppercase tracking-[0.05em] text-qori-outline">
+                <span className="flex min-w-0 flex-1 flex-col">
+                  <span className="text-[0.68rem] font-extrabold uppercase tracking-[0.05em] text-qori-outline">
                     {copy.guests}
                   </span>
-                  <select className="mt-1 w-full bg-transparent text-sm font-semibold text-qori-ink outline-none">
+                  <select className="mt-1 w-full min-w-0 bg-transparent text-sm font-semibold text-qori-ink outline-none">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -143,33 +145,51 @@ export default async function Home({
               </label>
               <Link
                 href={`/${langLocale}/contact`}
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-qori-primary px-7 py-4 text-sm font-extrabold uppercase tracking-[0.05em] text-white transition hover:bg-[#84250e]"
+                className="m-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-qori-primary px-6 py-3 text-[0.72rem] font-extrabold uppercase tracking-[0.05em] text-white transition hover:bg-[#84250e] md:col-span-3 lg:col-span-1 lg:px-0"
               >
                 {copy.search}
-                <FiSearch />
+                <FiSearch className="hidden xl:block" />
               </Link>
             </form>
           </div>
-
-          <div className="relative hidden min-h-[600px] lg:block">
-            <div className="absolute inset-x-10 bottom-0 top-8 overflow-hidden qori-arch border-[10px] border-white/75 shadow-[0_35px_80px_rgba(49,49,45,0.22)]">
-              <Image
-                src="/hero.png"
-                alt="Hotel Qorichaska"
-                fill
-                sizes="38vw"
-                className="object-cover"
-              />
-            </div>
+          <div className="absolute bottom-16 right-8 hidden max-w-[230px] rotate-2 rounded-lg border-2 border-white bg-qori-accent px-5 py-4 text-qori-ink shadow-[0_18px_40px_rgba(49,49,45,0.24)] lg:block">
+            <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.05em]">
+              Hotel Qorichaska
+            </p>
+            <p className="qori-serif mt-1 text-2xl font-bold leading-none">
+              {copy.experiences}
+            </p>
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-qori-outline-soft/50 bg-qori-surface-low py-8">
+        <div className="qori-container grid gap-4 text-center sm:grid-cols-2 lg:grid-cols-4">
+          {copy.localStrip.map((item) => (
+            <div
+              key={item}
+              className="flex items-center justify-center gap-2 text-[0.72rem] font-extrabold uppercase tracking-[0.05em] text-qori-outline"
+            >
+              <FiMapPin className="text-qori-accent" />
+              {item}
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="qori-section">
         <div className="qori-container">
-          <div className="mb-12 max-w-3xl">
-            <p className="qori-label mb-4">{copy.experiences}</p>
-            <h2 className="qori-heading">{page.about.slogan}</h2>
+          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-3xl">
+              <h2 className="qori-heading">{page.about.slogan}</h2>
+            </div>
+            <Link
+              href={`/${langLocale}/about`}
+              className="inline-flex items-center gap-2 text-[0.72rem] font-extrabold uppercase tracking-[0.05em] text-qori-primary"
+            >
+              {copy.cardAction}
+              <FiArrowRight />
+            </Link>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {page.home.infocards.map((card, index) => (
@@ -190,7 +210,7 @@ export default async function Home({
       <AboutCard lang={langLocale} />
       <RoomsMinimal lang={langLocale} />
 
-      <section className="qori-section bg-white">
+      <section className="qori-section bg-qori-surface">
         <div className="qori-container">
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
@@ -210,7 +230,7 @@ export default async function Home({
                 return (
                   <article
                     key={service.service}
-                    className="rounded-3xl border border-qori-outline/15 bg-qori-surface-low p-6"
+                    className="rounded-xl border border-qori-outline-soft/70 bg-white p-6 shadow-[0_14px_36px_rgba(147,48,24,0.04)]"
                   >
                     <Icon className="mb-5 text-qori-primary" size={30} />
                     <h3 className="font-bold text-qori-ink">{service.service}</h3>

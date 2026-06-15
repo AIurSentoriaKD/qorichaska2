@@ -18,7 +18,7 @@ function ImageCard({
 }) {
   return (
     <article className="qori-card group flex h-full flex-col">
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-64 overflow-hidden rounded-t-xl">
         <Image
           className="object-cover transition duration-700 group-hover:scale-105"
           src={`/${image}`}
@@ -27,8 +27,8 @@ function ImageCard({
           sizes="(min-width: 1024px) 33vw, 100vw"
         />
       </div>
-      <div className="flex flex-1 flex-col p-7">
-        <p className="qori-label mb-3 text-qori-blue">{subtitle}</p>
+      <div className="flex flex-1 flex-col p-6">
+        <p className="qori-label mb-3 text-qori-secondary">{subtitle}</p>
         <h3 className="qori-serif text-2xl font-bold leading-tight text-qori-ink">
           {title}
         </h3>
@@ -36,7 +36,7 @@ function ImageCard({
         {href ? (
           <Link
             href={href}
-            className="mt-7 inline-flex text-sm font-extrabold uppercase tracking-[0.05em] text-qori-primary"
+            className="mt-7 inline-flex text-[0.72rem] font-extrabold uppercase tracking-[0.05em] text-qori-primary"
           >
             {action}
           </Link>

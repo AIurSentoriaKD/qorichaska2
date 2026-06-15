@@ -21,7 +21,7 @@ function ReservationOnNavBar({
     <div>
       <div className="flex flex-row items-center gap-2">
         <Datepicker
-          primaryColor={"emerald"}
+          primaryColor={"orange"}
           minDate={new Date()}
           startFrom={new Date()}
           showFooter={true}
@@ -37,11 +37,11 @@ function ReservationOnNavBar({
             <span>habitacion(es)</span>
           </div>
           <div className="flex flex-row gap-1 mt-2 items-center justify-between">
-            <div className="flex flex-row gap-1 bg-black/50 p-2 rounded-md">
+            <div className="flex flex-row gap-1 rounded-md bg-qori-surface-low p-2 text-qori-primary">
               <span>#</span>
               <FaPerson />
             </div>
-            <div className="flex flex-row gap-1 bg-black/50 p-2 rounded-md">
+            <div className="flex flex-row gap-1 rounded-md bg-qori-surface-low p-2 text-qori-primary">
               <span>#</span>
               <FaChild />
             </div>
@@ -49,7 +49,7 @@ function ReservationOnNavBar({
         </div>
         <CustomButton
           title={buttonTitle}
-          containerStyles="bg-teal-500 text-white  hover:bg-teal-300"
+          containerStyles="bg-qori-primary text-white hover:bg-[#84250e]"
         />
       </div>
     </div>

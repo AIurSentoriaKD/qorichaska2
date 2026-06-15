@@ -23,7 +23,7 @@ function TouristicInfoCard({
         />
       </div>
       <div className="flex flex-col justify-center p-8 md:p-12">
-        <p className="qori-label mb-4 text-qori-blue">Cusco</p>
+        <p className="qori-label mb-4 text-qori-secondary">Cusco</p>
         <h3 className="qori-serif text-3xl font-bold leading-tight text-qori-ink md:text-4xl">
           {title}
         </h3>

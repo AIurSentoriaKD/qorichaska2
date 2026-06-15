@@ -99,15 +99,15 @@ function ServiceGrid({
   return (
     <section
       className={`qori-section ${
-        isDark ? "bg-qori-inverse text-white" : "bg-white text-qori-ink"
+        isDark ? "qori-pattern qori-soft-section text-qori-ink" : "bg-qori-surface text-qori-ink"
       }`}
     >
-      <div className="qori-container">
+      <div className="qori-container relative">
         <div className="mb-12 max-w-3xl">
-          <p className={`qori-label mb-4 ${isDark ? "text-qori-accent" : ""}`}>
+          <p className="qori-label mb-4">
             Hotel Qorichaska
           </p>
-          <h2 className={`qori-heading ${isDark ? "text-white" : ""}`}>{title}</h2>
+          <h2 className="qori-heading">{title}</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {items.map((item, index) => {
@@ -115,21 +115,19 @@ function ServiceGrid({
             return (
               <article
                 key={item.service}
-                className={`rounded-3xl border p-6 ${
+                className={`rounded-xl border p-6 shadow-[0_14px_36px_rgba(147,48,24,0.04)] ${
                   isDark
-                    ? "border-white/10 bg-white/[0.07]"
-                    : "border-qori-outline/15 bg-qori-surface-low"
+                    ? "border-qori-outline-soft/70 bg-white"
+                    : "border-qori-outline-soft/70 bg-white"
                 }`}
               >
                 <Icon
                   size={32}
-                  className={isDark ? "text-qori-accent" : "text-qori-primary"}
+                  className={isDark ? "text-qori-secondary" : "text-qori-primary"}
                 />
                 <h3 className="mt-6 font-bold">{item.service}</h3>
                 <p
-                  className={`mt-3 text-sm leading-7 ${
-                    isDark ? "text-white/70" : "text-qori-muted"
-                  }`}
+                  className="mt-3 text-sm leading-7 text-qori-muted"
                 >
                   {item.description}
                 </p>

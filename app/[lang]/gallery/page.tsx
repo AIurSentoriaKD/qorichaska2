@@ -51,7 +51,7 @@ export default async function Gallery({
             {images.map((item) => (
               <figure
                 key={item.src}
-                className={`group relative overflow-hidden rounded-3xl border border-qori-outline/15 bg-white shadow-[0_24px_60px_rgba(147,48,24,0.08)] ${item.span}`}
+                className={`group relative overflow-hidden rounded-xl border border-qori-outline-soft/70 bg-white shadow-[0_16px_45px_rgba(147,48,24,0.05)] ${item.span}`}
               >
                 <Image
                   src={item.src}

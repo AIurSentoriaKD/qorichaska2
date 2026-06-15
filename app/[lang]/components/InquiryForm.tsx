@@ -15,7 +15,7 @@ function InquiryForm() {
         name="mail"
         id="mail"
         placeholder="example@gmail.com"
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="w-full rounded border border-qori-outline-soft bg-white px-3 py-2 leading-tight text-qori-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-qori-accent"
       />
 
       <input
@@ -23,11 +23,11 @@ function InquiryForm() {
         name="name"
         id="name"
         placeholder="Your Name"
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="w-full rounded border border-qori-outline-soft bg-white px-3 py-2 leading-tight text-qori-ink shadow-sm focus:outline-none focus:ring-2 focus:ring-qori-accent"
       />
 
       <button
-        className="bg-primary-blue  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="rounded bg-qori-primary px-4 py-2 font-bold text-white hover:bg-[#84250e] focus:outline-none focus:ring-2 focus:ring-qori-accent"
         type="submit"
       >
         Inquiry Now
